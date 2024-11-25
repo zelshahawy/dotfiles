@@ -1,0 +1,34 @@
+filetype on
+syntax on
+set number
+set shiftwidth=2
+set tabstop=2
+set expandtab
+set nowrap
+set autoindent
+set cindent
+autocmd FileType make set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
+
+call plug#begin()
+
+" List your plugins here
+Plug 'yegappan/lsp'
+Plug 'airblade/vim-gitgutter'
+
+call plug#end()
+
+let lspOpts = #{autoHighlightDiags: v:true}
+autocmd User LspSetup call LspOptionsSet(lspOpts)
+
+let lspOpts = #{autoHighlightDiags: v:true}
+autocmd User LspSetup call LspOptionsSet(lspOpts)
+
+let lspServers = [#{
+	\	  name: 'clang',
+	\	  filetype: ['c', 'cpp'],
+	\	  path: '/run/current-system/sw/bin/clangd',
+	\	  args: ['--background-index']
+	\ }]
+autocmd User LspSetup call LspAddServer(lspServers)
+
+set updatetime=200
