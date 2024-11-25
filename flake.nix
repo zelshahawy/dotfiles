@@ -16,9 +16,10 @@
         # If using a stable channel you can use `url = "github:nix-community/nixvim/nixos-<version>"`
         inputs.nixpkgs.follows = "nixpkgs";
     };
+    mac-app-util.url = "github:hraban/mac-app-util";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, nixvim }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, nixvim, mac-app-util }:
   let
     configuration = {pkgs, ... }: {
         services.nix-daemon.enable = true;
@@ -43,6 +44,7 @@
 
         # Create /etc/zshrc that loads the nix-darwin environment.
         programs.zsh.enable = true;
+        nixpkgs.config.allowUnfree = true;
 
         environment.systemPackages = with pkgs; [
       	go
@@ -56,6 +58,7 @@
         ccls
         python312
         git
+        fastfetch
     ];
 
 	homebrew = {
@@ -66,10 +69,11 @@
             "redis"
           ];
           casks = [
-            "visual-studio-code"
             "font-fira-code-nerd-font"
             "google-chrome"
             "slack"
+            "maccy"
+            
           ];
           taps = [];
 
@@ -174,21 +178,29 @@
             };
             programs.zsh.syntaxHighlighting.enable = true;
             programs.zsh.autosuggestion.enable = true;
+            programs.vscode.enable = true;
     };
 
 
   in
-  {
-    darwinConfigurations."Ziads-MacBook-Air" = nix-darwin.lib.darwinSystem {
-      modules = [
-         configuration
-         home-manager.darwinModules.home-manager  {
+    {
+      darwinConfigurations."Ziads-MacBook-Air" = nix-darwin.lib.darwinSystem {
+        modules = [
+          configuration
+          mac-app-util.darwinModules.default
+          home-manager.darwinModules.home-manager
+          {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.verbose = true;
+
+            home-manager.sharedModules = [
+              mac-app-util.homeManagerModules.default
+            ];
+
             home-manager.users.ziadelshahawy = homeconfig;
-         }
-      ];
+          }
+        ];
+      };
     };
-  };
 }
