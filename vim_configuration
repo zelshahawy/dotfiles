@@ -12,23 +12,19 @@ autocmd FileType make set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
 call plug#begin()
 
 " List your plugins here
-Plug 'yegappan/lsp'
 Plug 'airblade/vim-gitgutter'
+Plug 'prabirshrestha/vim-lsp'
 
 call plug#end()
 
-let lspOpts = #{autoHighlightDiags: v:true}
-autocmd User LspSetup call LspOptionsSet(lspOpts)
-
-let lspOpts = #{autoHighlightDiags: v:true}
-autocmd User LspSetup call LspOptionsSet(lspOpts)
-
-let lspServers = [#{
-	\	  name: 'clang',
-	\	  filetype: ['c', 'cpp'],
-	\	  path: '/run/current-system/sw/bin/clangd',
-	\	  args: ['--background-index']
-	\ }]
-autocmd User LspSetup call LspAddServer(lspServers)
+if executable('ccls')
+   au User lsp_setup call lsp#register_server({
+      \ 'name': 'ccls',
+      \ 'cmd': {server_info->['ccls']},
+      \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
+      \ 'initialization_options': {'cache': {'directory': expand('~/.cache/ccls') }},
+      \ 'allowlist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
+      \ })
+endif
 
 set updatetime=200

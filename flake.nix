@@ -53,7 +53,7 @@
         ncdu
         subversion
         bat
-        llvmPackages_19.clang-tools
+        ccls
         python312
         git
     ];
@@ -73,25 +73,30 @@
           ];
           taps = [];
 
+          masApps = {
+          };
+
   	};
     security.pam.enableSudoTouchIdAuth = true;
 
     system.defaults = {
-              # minimal dock
-              dock = {
-                autohide = true;
-                orientation = "bottom";
-              show-process-indicators = false;
-              show-recents = false;
-              static-only = true;
-            };
-            # a finder that tells me what I want to know and lets me work
-           finder = {
-              AppleShowAllExtensions = true;
-              ShowPathbar = true;
-              FXEnableExtensionChangeWarning = false;
-            };
+        # minimal dock
+        dock = {
+          autohide = true;
+          orientation = "bottom";
+          show-process-indicators = false;
+          show-recents = false;
+          static-only = true;
+        };
+        # a finder that tells me what I want to know and lets me work
+        finder = {
+          AppleShowAllExtensions = true;
+          ShowPathbar = true;
+          FXEnableExtensionChangeWarning = false;
+        };
     };
+    
+
     };
 
     homeconfig = {pkgs, ...}: {
@@ -114,6 +119,7 @@
                     switch = "darwin-rebuild switch --flake ~/.config/nix";
                     e = "eza";
                     uclinux = "ssh zelshahawy@linux.cs.uchicago.edu";
+                    upd = "vim ~/.config/nix/flake.nix";
                 };
                 initExtra = ''
                     prompt_context(){} # removed computer name
