@@ -47,18 +47,11 @@
         nixpkgs.config.allowUnfree = true;
 
         environment.systemPackages = with pkgs; [
-      	go
-      	lf
-        tealdeer
-        eza
         duf
         ncdu
         subversion
-        bat
         ccls
         python312
-        git
-        fastfetch
     ];
 
 	homebrew = {
@@ -73,6 +66,7 @@
             "google-chrome"
             "slack"
             "maccy"
+            "anki"
             
           ];
           taps = [];
@@ -160,11 +154,23 @@
                                                                     '';
             };
 
+            # A bunch of programs enabled/disabled using home maanager with no extra config
+            programs.firefox.enable = false;
+            programs.eza.enable = true;
+            programs.go.enable = true;
+            programs.lf.enable = true;
+            programs.fastfetch.enable = true;
+            programs.bat.enable = true;
+            programs.zsh.syntaxHighlighting.enable = true;
+            programs.zsh.autosuggestion.enable = true;
+            programs.vscode.enable = true;
+            programs.tealdeer.enable = true;
+
             programs.git = {
                 enable = true;
                 userName = "Ziad Elshahawy";
                 userEmail = "ziadelshahawygit@gmail.com";
-                ignores = [ ".DS_Store" ];
+                ignores = [ ".DS_Store" "*.lock" ];
                 extraConfig = {
                     init.defaultBranch = "main";
                     push.autoSetupRemote = true;
@@ -176,9 +182,6 @@
                 plugins = ["git" "svn" "you-should-use"];
                 theme = "agnoster";
             };
-            programs.zsh.syntaxHighlighting.enable = true;
-            programs.zsh.autosuggestion.enable = true;
-            programs.vscode.enable = true;
     };
 
 
