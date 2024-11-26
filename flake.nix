@@ -118,6 +118,7 @@
                     switch = "darwin-rebuild switch --flake ~/.config/nix";
                     uclinux = "ssh zelshahawy@linux.cs.uchicago.edu";
                     upd = "vim ~/.config/nix/flake.nix";
+                    e = "exit";
                 };
                 initExtra = ''
                     prompt_context(){} # removed computer name
