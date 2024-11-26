@@ -52,6 +52,7 @@
         subversion
         ccls
         python312
+        gopls
     ];
 
 	homebrew = {
