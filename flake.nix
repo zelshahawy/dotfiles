@@ -115,7 +115,6 @@
                 enable = true;
                 shellAliases = {
                     switch = "darwin-rebuild switch --flake ~/.config/nix";
-                    e = "eza";
                     uclinux = "ssh zelshahawy@linux.cs.uchicago.edu";
                     upd = "vim ~/.config/nix/flake.nix";
                 };
