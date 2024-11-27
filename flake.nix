@@ -120,40 +120,7 @@
                     upd = "vim ~/.config/nix/flake.nix";
                     e = "exit";
                 };
-                initExtra = ''
-                    prompt_context(){} # removed computer name
-
-                    # svn set up
-
-                    prompt_svn() {
-                        local rev branch
-                        if in_svn; then
-                            rev=$(svn_get_rev_nr)
-                            branch=$(svn_get_branch_name)
-                            if [ `svn_dirty_choose_pwd 1 0` -eq 1 ]; then
-                                prompt_segment yellow black
-                                echo -n "$rev@$branch"
-                                echo -n "±"
-                            else
-                                prompt_segment green black
-                                echo -n "$rev@$branch"
-                            fi
-                        fi
-                    }
-
-                    build_prompt() {
-                        RETVAL=$?
-                        prompt_status
-                        prompt_context
-                        prompt_dir
-                        prompt_git
-                        prompt_svn
-                        prompt_end
-                    }
-
-                    export PATH="/run/current-system/sw/bin/:$PATH" 
-                    export PATH=$PATH:$HOME/go/bin  
-                                                                    '';
+                initExtra = builtins.readFile ./zsh_extra;
             };
 
             # A bunch of programs enabled/disabled using home maanager with no extra config
