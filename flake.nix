@@ -152,6 +152,7 @@
                     }
 
                     export PATH="/run/current-system/sw/bin/:$PATH" 
+                    export PATH=$PATH:$HOME/go/bin  
                                                                     '';
             };
 
