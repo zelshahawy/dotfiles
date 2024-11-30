@@ -57,7 +57,11 @@
 
 	homebrew = {
           enable = true;
-          onActivation.cleanup = "uninstall";
+          onActivation = {
+            autoUpdate = true;
+            cleanup = "uninstall";
+            upgrade = true;
+          };
           brews = [
             "mongodb/brew/mongodb-community"
             "redis"
@@ -65,10 +69,10 @@
           casks = [
             "font-fira-code-nerd-font"
             "google-chrome"
-            "slack"
             "maccy"
             "anki"
-            
+            "vmware-fusion"
+            "slack"
           ];
           taps = [];
 
