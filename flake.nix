@@ -74,7 +74,9 @@
             "vmware-fusion"
             "slack"
           ];
-          taps = [];
+          taps = [
+            "homebrew/services"
+          ];
 
           masApps = {
           };
