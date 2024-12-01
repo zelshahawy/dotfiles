@@ -11,15 +11,10 @@
         url = "github:nix-community/home-manager";
         inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixvim = {
-        url = "github:nix-community/nixvim";
-        # If using a stable channel you can use `url = "github:nix-community/nixvim/nixos-<version>"`
-        inputs.nixpkgs.follows = "nixpkgs";
-    };
     mac-app-util.url = "github:hraban/mac-app-util";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, nixvim, mac-app-util }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, mac-app-util }:
   let
     configuration = {pkgs, ... }: {
         services.nix-daemon.enable = true;
@@ -53,6 +48,7 @@
         ccls
         python312
         gopls
+        mas
     ];
 
 	homebrew = {
@@ -93,12 +89,14 @@
           show-process-indicators = false;
           show-recents = false;
           static-only = true;
+          magnification = false;
         };
         # a finder that tells me what I want to know and lets me work
         finder = {
           AppleShowAllExtensions = true;
           ShowPathbar = true;
           FXEnableExtensionChangeWarning = false;
+          AppleShowAllFiles = false; # Use when want to see hidden
         };
     };
     
