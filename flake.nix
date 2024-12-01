@@ -12,9 +12,15 @@
         inputs.nixpkgs.follows = "nixpkgs";
     };
     mac-app-util.url = "github:hraban/mac-app-util";
+    nixvim = {
+      url = "github:nix-community/nixvim";
+        # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
+        # url = "github:nix-community/nixvim/nixos-24.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, mac-app-util }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, mac-app-util, nixvim}:
   let
     configuration = {pkgs, ... }: {
         services.nix-daemon.enable = true;
@@ -98,12 +104,15 @@
           FXEnableExtensionChangeWarning = false;
           AppleShowAllFiles = false; # Use when want to see hidden
         };
+        trackpad = {
+          # Clicking = true;
+          #  ActuationStrength = 0;
+        };
     };
-    
 
     };
 
-    homeconfig = {pkgs, ...}: {
+    homeconfig = {pkgs, nixvim, ...}: {
             # this is internal compatibility configuration 
             # for home-manager, don't change this!
             home.stateVersion = "23.05";
@@ -156,6 +165,21 @@
                 plugins = ["git" "svn" "you-should-use"];
                 theme = "agnoster";
             };
+
+            programs.nixvim = {
+                enable = true;
+                plugins.lualine.enable = true;
+
+                plugins = {
+                    lsp = {
+                        servers = {
+                            ccls = {};
+                            gopls = {};
+                            pyright = {};
+                        };
+                    };
+                };
+            };
     };
 
 
@@ -173,6 +197,7 @@
 
             home-manager.sharedModules = [
               mac-app-util.homeManagerModules.default
+              inputs.nixvim.homeManagerModules.nixvim
             ];
 
             home-manager.users.ziadelshahawy = homeconfig;
