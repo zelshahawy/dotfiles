@@ -73,6 +73,7 @@
             "anki"
             "vmware-fusion"
             "slack"
+            "obsidian"
           ];
           taps = [
             "homebrew/services"
