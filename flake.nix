@@ -12,15 +12,9 @@
         inputs.nixpkgs.follows = "nixpkgs";
     };
     mac-app-util.url = "github:hraban/mac-app-util";
-    nixvim = {
-      url = "github:nix-community/nixvim";
-        # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
-        # url = "github:nix-community/nixvim/nixos-24.11";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, mac-app-util, nixvim}:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, mac-app-util}:
   let
     configuration = {pkgs, ... }: {
         services.nix-daemon.enable = true;
@@ -112,7 +106,7 @@
 
     };
 
-    homeconfig = {pkgs, nixvim, ...}: {
+    homeconfig = {pkgs, ...}: {
             # this is internal compatibility configuration 
             # for home-manager, don't change this!
             home.stateVersion = "23.05";
@@ -125,6 +119,11 @@
                 EDITOR = "vim";
             };
             home.file.".vimrc".source = ./vim_configuration;
+
+            home.file."./.config/nvim/" = {
+                source = ./config;
+                recursive = true;
+            };
 
             programs.zsh = {
                 enable = true;
@@ -166,19 +165,8 @@
                 theme = "agnoster";
             };
 
-            programs.nixvim = {
+            programs.neovim = {
                 enable = true;
-                plugins.lualine.enable = true;
-
-                plugins = {
-                    lsp = {
-                        servers = {
-                            ccls = {};
-                            gopls = {};
-                            pyright = {};
-                        };
-                    };
-                };
             };
     };
 
@@ -197,7 +185,6 @@
 
             home-manager.sharedModules = [
               mac-app-util.homeManagerModules.default
-              inputs.nixvim.homeManagerModules.nixvim
             ];
 
             home-manager.users.ziadelshahawy = homeconfig;
