@@ -70,6 +70,7 @@
             "vmware-fusion"
             "slack"
             "obsidian"
+            "microsoft-powerpoint"
           ];
           taps = [
             "homebrew/services"
