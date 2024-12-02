@@ -1,3 +1,2 @@
-# Simple Dotfiles managment, focusing on Vim, Nvim and other popular packages
-
+# Personal Dotfile config primarily managed by Home Manager
 
