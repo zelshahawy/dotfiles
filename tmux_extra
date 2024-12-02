@@ -1,0 +1,6 @@
+bind -n C-s split-window -h
+bind -n C-v split-window -v
+bind -n C-Left select-pane -L  # Move to the pane on the left
+bind -n C-Right select-pane -R  # Move to the pane on the right
+bind -n C-Up select-pane -U  # Move to the pane above
+bind -n C-Down select-pane -D  # Move to the pane below

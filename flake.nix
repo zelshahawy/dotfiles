@@ -148,6 +148,12 @@
             programs.vscode.enable = true;
             programs.tealdeer.enable = true;
 
+            programs.tmux = {
+              enable = true;
+              mouse = true;
+              extraConfig = builtins.readFile ./tmux_extra; 
+            };
+
             programs.git = {
                 enable = true;
                 userName = "Ziad Elshahawy";
