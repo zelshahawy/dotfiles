@@ -71,6 +71,7 @@
             "slack"
             "obsidian"
             "microsoft-powerpoint"
+            "postman"
           ];
           taps = [
             "homebrew/services"
