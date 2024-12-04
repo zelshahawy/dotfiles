@@ -49,6 +49,7 @@
         python312
         gopls
         mas
+        python312Packages.python-lsp-server
     ];
 
 	homebrew = {

@@ -4,6 +4,10 @@
 -- loading lazy
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+vim.opt.tabstop = 2       -- Set tab width to 2 spaces
+vim.opt.shiftwidth = 2    -- Indentation uses 2 spaces
+vim.opt.softtabstop = 2   -- Tabs behave like 2 spaces
+vim.opt.expandtab = true  -- Convert tabs to spacesxw
 
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
@@ -40,7 +44,7 @@ require('lazy').setup('custom.plugins', {
 })
 
 require 'custom.configs'
-
+  
 
 vim.cmd [[ au VimLeave * set guicursor=a:ver20 ]]
 
