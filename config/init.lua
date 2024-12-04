@@ -33,7 +33,7 @@ vim.opt.rtp:prepend(lazypath)
 --    as they will be available in your neovim runtime.
 require('lazy').setup('custom.plugins', {
   defaults = {
-    cond = vim.g.vscode
+    cond = true
   },
   checker = {
     enabled = true,
