@@ -8,6 +8,7 @@ vim.opt.tabstop = 2       -- Set tab width to 2 spaces
 vim.opt.shiftwidth = 2    -- Indentation uses 2 spaces
 vim.opt.softtabstop = 2   -- Tabs behave like 2 spaces
 vim.opt.expandtab = true  -- Convert tabs to spacesxw
+vim.cmd('set nowrap')     -- No Wrapping
 
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
