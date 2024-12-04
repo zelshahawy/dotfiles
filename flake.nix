@@ -73,6 +73,7 @@
             "obsidian"
             "microsoft-powerpoint"
             "postman"
+            "zoom"
           ];
           taps = [
             "homebrew/services"
