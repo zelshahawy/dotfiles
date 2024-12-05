@@ -74,7 +74,6 @@
             "microsoft-powerpoint"
             "postman"
             "zoom"
-            "kitty"
           ];
           taps = [
             "homebrew/services"
@@ -134,9 +133,10 @@
                 enable = true;
                 shellAliases = {
                     switch = "darwin-rebuild switch --flake ~/.config/nix";
-                    uclinux = "ssh zelshahawy@linux.cs.uchicago.edu";
-                    upd = "vim ~/.config/nix/flake.nix";
+                    uclinux = "sshk zelshahawy@linux.cs.uchicago.edu";
+                    upd = "nvim ~/.config/nix/flake.nix";
                     e = "exit";
+                    sshk = "kitty +kitten ssh";
                 };
                 initExtra = builtins.readFile ./zsh_extra;
             };
@@ -178,6 +178,15 @@
 
             programs.neovim = {
                 enable = true;
+            };
+
+            programs.kitty = {
+                enable = true;
+                font = {
+                    size = 15;
+                    name = "FiraCode Nerd Font Mono Light"; 
+                };
+                themeFile = "Dracula";
             };
     };
 
