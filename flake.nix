@@ -38,7 +38,10 @@
         };
 
         # Create /etc/zshrc that loads the nix-darwin environment.
-        programs.zsh.enable = true;
+        programs.zsh = {
+            enable = true;
+        };
+
         nixpkgs.config.allowUnfree = true;
 
         environment.systemPackages = with pkgs; [
@@ -50,6 +53,9 @@
         gopls
         mas
         python312Packages.python-lsp-server
+        nurl
+  
+
     ];
 
 	homebrew = {
@@ -120,7 +126,7 @@
             home.packages = with pkgs; [];
 
             home.sessionVariables = {
-                EDITOR = "vim";
+                EDITOR = "nvim";
             };
             home.file.".vimrc".source = ./vim_configuration;
 
@@ -139,6 +145,17 @@
                     sshk = "kitty +kitten ssh";
                 };
                 initExtra = builtins.readFile ./zsh_extra;
+                plugins = [
+                    {
+                        name = "you-should-use";
+                        src = pkgs.fetchFromGitHub {
+                            owner = "MichaelAquilina";
+                            repo = "zsh-you-should-use";
+                            rev = "f13d39a1ae84219e4ee14e77d31bb774c91f2fe3";
+                            hash = "sha256-+3iAmWXSsc4OhFZqAMTwOL7AAHBp5ZtGGtvqCnEOYc0=";
+                        };
+                    }
+                ];
             };
 
             # A bunch of programs enabled/disabled using home maanager with no extra config
@@ -172,7 +189,7 @@
 
             programs.zsh.oh-my-zsh = {
                 enable = true;
-                plugins = ["git" "svn" "you-should-use"];
+                plugins = ["git" "svn"];
                 theme = "agnoster";
             };
 
