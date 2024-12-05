@@ -74,6 +74,7 @@
             "microsoft-powerpoint"
             "postman"
             "zoom"
+            "kitty"
           ];
           taps = [
             "homebrew/services"
