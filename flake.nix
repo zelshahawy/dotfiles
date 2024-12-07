@@ -54,8 +54,6 @@
         mas
         python312Packages.python-lsp-server
         nurl
-  
-
     ];
 
 	homebrew = {
