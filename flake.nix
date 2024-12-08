@@ -48,7 +48,6 @@
         duf
         ncdu
         subversion
-        ccls
         python312
         gopls
         mas
@@ -129,7 +128,7 @@
             home.file.".vimrc".source = ./vim_configuration;
 
             home.file."./.config/nvim/" = {
-                source = ./config;
+                source = ./nvim-config;
                 recursive = true;
             };
 

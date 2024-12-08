@@ -4,7 +4,7 @@ local on_attach = require('custom.util.lspconfig').on_attach
 
 local servers = {
   -- C/C++ LSP
-  ccls = {},
+  clangd = {},
 
   -- Go LSP
   gopls = {},
