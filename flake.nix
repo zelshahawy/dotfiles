@@ -84,8 +84,8 @@
 
           masApps = {
           };
-
   	};
+
     security.pam.enableSudoTouchIdAuth = true;
 
     system.defaults = {
@@ -107,7 +107,7 @@
         };
         trackpad = {
           # Clicking = true;
-          #  ActuationStrength = 0;
+          # ActuationStrength = 0;
         };
     };
 
@@ -225,7 +225,7 @@
                         };
                         file = "syntax/gleam.sublime-syntax";
                     };
-                };               
+                };
             };
     };
 
