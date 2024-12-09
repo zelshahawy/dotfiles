@@ -161,7 +161,6 @@
             programs.go.enable = true;
             programs.lf.enable = true;
             programs.fastfetch.enable = true;
-            programs.bat.enable = true;
             programs.zsh.syntaxHighlighting.enable = true;
             programs.zsh.autosuggestion.enable = true;
             programs.vscode.enable = true;
@@ -201,6 +200,32 @@
                     name = "FiraCode Nerd Font Mono Light"; 
                 };
                 themeFile = "Dracula";
+            };
+
+            programs.bat = {
+                enable = true;
+                themes = {
+                    solarized-light = {
+                        src = pkgs.fetchFromGitHub {
+                            owner = "braver";
+                            repo = "Solarized"; # Bat uses sublime syntax for its themes
+                            rev = "82c9ae47b11a547c3c55d2d0fb5a96ea7bec035f";
+                            sha256 = "sha256-K0LevG89BxbGajxWWycunK+pwH3JlJSfb+23bM54uYk=";
+                        };
+                        file = "Solarized (light).sublime-color-scheme";
+                    };
+                };
+                syntaxes = {
+                    gleam = {
+                        src = pkgs.fetchFromGitHub {
+                            owner = "molnarmark";
+                            repo = "sublime-gleam";
+                            rev = "2e761cdb1a87539d827987f997a20a35efd68aa9";
+                            hash = "sha256-Zj2DKTcO1t9g18qsNKtpHKElbRSc9nBRE2QBzRn9+qs=";
+                        };
+                        file = "syntax/gleam.sublime-syntax";
+                    };
+                };               
             };
     };
 
