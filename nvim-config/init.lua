@@ -49,6 +49,14 @@ require 'custom.configs'
   
 
 vim.cmd [[ au VimLeave * set guicursor=a:ver20 ]]
+--NOTE
+vim.api.nvim_set_keymap( -- NOTE:Used for setting up formatting for lsp
+  'n',                    -- Normal mode
+  '<C-f>',                -- Key combination (Ctrl+F)
+  '<cmd>lua vim.lsp.buf.format({ async = true })<CR>',  -- Command to invoke formatting
+  { noremap = true, silent = true } -- Options: no remapping and silent execution
+)
+
 
 -- vim: ts=2 sts=2 sw=2 et
 --
