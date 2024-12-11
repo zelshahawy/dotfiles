@@ -33,6 +33,20 @@ local servers = {
       }
     }
   },
+  nil_ls = {
+    settings = {
+      ['nil'] = {
+        formatting = {
+          command = { 'nixpkgs-fmt' }
+        },
+        nix = {
+          flake = {
+            autoArchive = true
+          }
+        }
+      }
+    }
+  }
 }
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
