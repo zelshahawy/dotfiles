@@ -86,31 +86,34 @@
           };
   	};
 
-    security.pam.enableSudoTouchIdAuth = true;
+        security.pam.enableSudoTouchIdAuth = true;
 
-    system.defaults = {
-        # minimal dock
-        dock = {
-          autohide = true;
-          orientation = "bottom";
-          show-process-indicators = false;
-          show-recents = false;
-          static-only = true;
-          magnification = false;
+        system.defaults = {
+            # minimal dock
+            dock = {
+              autohide = true;
+              orientation = "bottom";
+              show-process-indicators = false;
+              show-recents = false;
+              static-only = true;
+              magnification = false;
+            };
+            # a finder that tells me what I want to know and lets me work
+            finder = {
+              AppleShowAllExtensions = true;
+              ShowPathbar = true;
+              FXEnableExtensionChangeWarning = false;
+              AppleShowAllFiles = false; # Use when want to see hidden
+            };
+            trackpad = {
+              # Clicking = true;
+              # ActuationStrength = 0;
+            };
         };
-        # a finder that tells me what I want to know and lets me work
-        finder = {
-          AppleShowAllExtensions = true;
-          ShowPathbar = true;
-          FXEnableExtensionChangeWarning = false;
-          AppleShowAllFiles = false; # Use when want to see hidden
+        nix.gc = {
+            automatic = true;
+            options = "--delete-older-than 15d";
         };
-        trackpad = {
-          # Clicking = true;
-          # ActuationStrength = 0;
-        };
-    };
-
     };
 
     homeconfig = {pkgs, ...}: {
