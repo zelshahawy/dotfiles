@@ -144,6 +144,7 @@
             upd = "nvim ~/.config/nix/flake.nix";
             e = "exit";
             sshk = "kitty +kitten ssh";
+            c = "clear";
           } // (
             let servers = [ "ra" "amun" "set" "anubis" "seshat" "hathor" "thoth" "maat" ];
             in
@@ -265,3 +266,4 @@
       };
     };
 }
+
