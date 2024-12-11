@@ -143,7 +143,16 @@
                     upd = "nvim ~/.config/nix/flake.nix";
                     e = "exit";
                     sshk = "kitty +kitten ssh";
-                };
+                } // (
+                    let servers = [ "ra" "amun" "set" "anubis" "seshat" "hathor" "thoth" "maat" ];
+                    in
+                    builtins.listToAttrs (map
+                        (server: {
+                            name = server;
+                            value = "sshk zelshahawy@${server}.cs.uchicago.edu";
+                        })
+                        servers)
+                    );
                 initExtra = builtins.readFile ./zsh_extra;
                 plugins = [
                     {
