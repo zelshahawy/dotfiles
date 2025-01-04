@@ -1,7 +1,8 @@
 prompt_context(){} # removes computer name
 
 # svn setup
-prompt_svn() {
+
+: ' prompt_svn() {
     local rev branch
     if in_svn; then
         rev=$(svn_get_rev_nr)
@@ -25,7 +26,8 @@ build_prompt() {
     prompt_git
     prompt_svn
     prompt_end
-}
+}  '
+
 
 export PATH="/run/current-system/sw/bin/:$PATH"
 export PATH="$PATH:$HOME/go/bin"
