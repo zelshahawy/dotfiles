@@ -1,4 +1,4 @@
-prompt_context(){} # removed computer name
+prompt_context(){} # removes computer name
 
 # svn setup
 prompt_svn() {
