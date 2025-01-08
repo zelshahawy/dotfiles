@@ -56,6 +56,7 @@
           nil
           nixpkgs-fmt
           llvmPackages_19.clang-unwrapped
+          yarn
         ];
 
         homebrew = {
