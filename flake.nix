@@ -45,7 +45,6 @@
         nixpkgs.config.allowUnfree = true;
 
         environment.systemPackages = with pkgs; [
-          duf
           ncdu
           subversion
           python312
