@@ -81,6 +81,7 @@
             "microsoft-powerpoint"
             "postman"
             "zoom"
+            "1password"
           ];
           taps = [
             "homebrew/services"
