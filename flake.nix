@@ -57,7 +57,6 @@
           llvmPackages_19.clang-unwrapped
           yarn
           nodejs_23
-          docker
         ];
 
         homebrew = {
@@ -83,6 +82,7 @@
             "postman"
             "zoom"
             "1password"
+            "docker"
           ];
           taps = [
             "homebrew/services"
