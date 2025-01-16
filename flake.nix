@@ -88,7 +88,9 @@
             "homebrew/services"
           ];
 
-          masApps = { };
+          masApps = {
+            Xcode = 497799835; # For Xcode
+          };
         };
 
         security.pam.enableSudoTouchIdAuth = true;
