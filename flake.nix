@@ -215,7 +215,7 @@
         programs.kitty = {
           enable = true;
           font = {
-            size = 15;
+            size = 19;
             name = "FiraCode Nerd Font Mono Light";
           };
           themeFile = "Catppuccin-Mocha";
