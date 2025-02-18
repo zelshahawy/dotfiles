@@ -145,7 +145,7 @@
           enable = true;
           shellAliases = {
             switch = "darwin-rebuild switch --flake ~/.config/nix";
-            uclinux = "sshk zelshahawy@linux.cs.uchicago.edu";
+            uclinux = "ssh zelshahawy@linux.cs.uchicago.edu";
             upd = "nvim ~/.config/nix/flake.nix";
             e = "exit";
             sshk = "kitty +kitten ssh";
@@ -219,6 +219,9 @@
             name = "FiraCode Nerd Font Mono Light";
           };
           themeFile = "Catppuccin-Mocha";
+          settings = {
+            background_blur = 1;
+          };
         };
 
         programs.alacritty = {
