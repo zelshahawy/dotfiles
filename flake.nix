@@ -156,7 +156,7 @@
             builtins.listToAttrs (map
               (server: {
                 name = server;
-                value = "sshk zelshahawy@${server}.cs.uchicago.edu";
+                value = "ssh zelshahawy@${server}.cs.uchicago.edu";
               })
               servers)
           );
