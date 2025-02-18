@@ -17,7 +17,6 @@
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, mac-app-util }:
     let
       configuration = { pkgs, ... }: {
-        services.nix-daemon.enable = true;
         # Necessary for using flakes on this system.
         nix.settings.experimental-features = "nix-command flakes";
 
@@ -25,7 +24,7 @@
 
         # Used for backwards compatibility. please read the changelog
         # before changing: `darwin-rebuild changelog`.
-        system.stateVersion = 4;
+        system.stateVersion = 5;
 
         # The platform the configuration will be used on.
         # If you're on an Intel system, replace with "x86_64-darwin"
@@ -219,7 +218,56 @@
             size = 15;
             name = "FiraCode Nerd Font Mono Light";
           };
-          themeFile = "Dracula";
+          themeFile = "Catppuccin-Mocha";
+        };
+
+        programs.alacritty = {
+          enable = true;
+          settings = {
+            general =
+              let
+                catppuccinAlacritty = builtins.fetchGit {
+                  url = "https://github.com/catppuccin/alacritty.git";
+                  rev = "f6cb5a5c2b404cdaceaff193b9c52317f62c62f7";
+                };
+              in
+              {
+                live_config_reload = true;
+                import = [
+                  "${catppuccinAlacritty}/catppuccin-mocha.toml"
+                ];
+              };
+            terminal.shell = {
+              args = [ "-l" "-c" "tmux attach || tmux -2" ];
+              program = "${pkgs.zsh}/bin/zsh";
+            };
+            selection.save_to_clipboard = true;
+            cursor = {
+              blink_interval = 400;
+              thickness = 0.15;
+              unfocused_hollow = true;
+              style = {
+                blinking = "Always";
+                shape = "Beam";
+              };
+            };
+            font = {
+              size = 19.0;
+              normal = {
+                family = "FiraCode Nerd Font Mono Light";
+              };
+            };
+            window = {
+              decorations = "Buttonless";
+              opacity = 0.7;
+              option_as_alt = "OnlyLeft";
+              blur = true;
+              padding = {
+                x = 5;
+                y = 2;
+              };
+            };
+          };
         };
 
         programs.bat = {
