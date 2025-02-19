@@ -16,9 +16,9 @@
   };
 
   # User dotfiles.
-  home.file.".vimrc".source = ../vim_configuration;
+  home.file.".vimrc".source = ../etc/vim_configuration;
   home.file."./.config/nvim/" = {
-    source = ../nvim-config;
+    source = ../etc/nvim-config;
     recursive = true;
   };
 
@@ -35,7 +35,7 @@
           value = "ssh zelshahawy@${server}.cs.uchicago.edu";
         })
         servers);
-    initExtra = builtins.readFile ../zsh_extra;
+    initExtra = builtins.readFile ../etc/zsh_extra;
     plugins = [
       {
         name = "you-should-use";
@@ -64,7 +64,7 @@
   programs.tmux = {
     enable = true;
     mouse = true;
-    extraConfig = builtins.readFile ../tmux_extra;
+    extraConfig = builtins.readFile ../etc/tmux_extra;
   };
 
   # Git configuration.
