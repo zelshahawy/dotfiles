@@ -25,16 +25,23 @@
   # zsh configuration with shell aliases.
   programs.zsh = {
     enable = true;
-    shellAliases =
-      let
-        servers = [ "ra" "amun" "set" "anubis" "seshat" "hathor" "thoth" "maat" ];
+    shellAliases = {
+      switch = "darwin-rebuild switch --flake ~/.config/nix";
+      uclinux = "ssh zelshahawy@linux.cs.uchicago.edu";
+      e = "exit";
+      sshk = "kitty +kitten ssh";
+      c = "clear";
+    } // (
+      let servers = [ "ra" "amun" "set" "anubis" "seshat" "hathor" "thoth" "maat" ];
       in
       builtins.listToAttrs (map
         (server: {
           name = server;
           value = "ssh zelshahawy@${server}.cs.uchicago.edu";
         })
-        servers);
+        servers)
+    );
+
     initExtra = builtins.readFile ../etc/zsh_extra;
     plugins = [
       {
