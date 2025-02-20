@@ -62,6 +62,7 @@
       "zoom"
       "1password"
       "docker"
+      "firefox@developer-edition"
     ];
     taps = [
       "homebrew/services"

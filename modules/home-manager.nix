@@ -15,6 +15,15 @@
     EDITOR = "nvim";
   };
 
+  programs.eza.enable = true;
+  programs.go.enable = true;
+  programs.lf.enable = true;
+  programs.fastfetch.enable = true;
+  programs.zsh.syntaxHighlighting.enable = true;
+  programs.zsh.autosuggestion.enable = true;
+  programs.vscode.enable = true;
+  programs.tealdeer.enable = true;
+
   # User dotfiles.
   home.file.".vimrc".source = ../etc/vim_configuration;
   home.file."./.config/nvim/" = {
@@ -29,7 +38,7 @@
       switch = "darwin-rebuild switch --flake ~/.config/nix";
       uclinux = "ssh zelshahawy@linux.cs.uchicago.edu";
       e = "exit";
-      sshk = "kitty +kitten ssh";
+      sshk = "kitty +kitten ssh"; # Currently deprecated.
       c = "clear";
     } // (
       let servers = [ "ra" "amun" "set" "anubis" "seshat" "hathor" "thoth" "maat" ];
@@ -55,17 +64,6 @@
       }
     ];
   };
-
-  # Enable/disable various programs.
-  programs.firefox.enable = false;
-  programs.eza.enable = true;
-  programs.go.enable = true;
-  programs.lf.enable = true;
-  programs.fastfetch.enable = true;
-  programs.zsh.syntaxHighlighting.enable = true;
-  programs.zsh.autosuggestion.enable = true;
-  programs.vscode.enable = true;
-  programs.tealdeer.enable = true;
 
   # tmux configuration.
   programs.tmux = {
@@ -164,5 +162,6 @@
       };
     };
   };
+
 }
 
