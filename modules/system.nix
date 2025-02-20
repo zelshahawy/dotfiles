@@ -51,7 +51,6 @@
     ];
     casks = [
       "font-fira-code-nerd-font"
-      "google-chrome"
       "maccy"
       "anki"
       "vmware-fusion"
