@@ -2,7 +2,9 @@
   description = "My system configuration ";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs = {
+      url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    };
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -12,13 +14,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     mac-app-util.url = "github:hraban/mac-app-util";
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, mac-app-util }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, mac-app-util, nix-vscode-extensions }:
     let
       # Import the modular configurations.
       systemModule = import ./modules/system.nix;
       homeModule = import ./modules/home-manager.nix;
+
     in
     {
       darwinConfigurations."Ziads-MacBook-Air" = nix-darwin.lib.darwinSystem {
