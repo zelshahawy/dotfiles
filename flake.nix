@@ -35,6 +35,7 @@
             home-manager.sharedModules = [
               mac-app-util.homeManagerModules.default
             ];
+            home-manager.backupFileExtension = "backup";
 
             # Use the imported Home Manager configuration.
             home-manager.users.ziadelshahawy = homeModule;

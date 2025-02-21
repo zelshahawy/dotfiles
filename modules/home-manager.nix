@@ -6,7 +6,6 @@
 
   # Enable Home Manager self-management.
   programs.home-manager.enable = true;
-
   # Additional packages for the user.
   home.packages = with pkgs; [ ];
 
