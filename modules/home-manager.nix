@@ -21,7 +21,6 @@
   programs.fastfetch.enable = true;
   programs.zsh.syntaxHighlighting.enable = true;
   programs.zsh.autosuggestion.enable = true;
-  programs.vscode.enable = true;
   programs.tealdeer.enable = true;
 
   # User dotfiles.
@@ -160,6 +159,13 @@
         };
         file = "syntax/gleam.sublime-syntax";
       };
+    };
+  };
+
+  programs.vscode = {
+    enable = true;
+    userSettings = {
+      "editor.formatOnSave" = true;
     };
   };
 
