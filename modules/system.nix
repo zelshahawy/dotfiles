@@ -62,6 +62,7 @@
       "1password"
       "docker"
       "firefox@developer-edition"
+      "adobe-creative-cloud"
     ];
     taps = [
       "homebrew/services"
