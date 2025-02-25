@@ -73,7 +73,7 @@
   };
 
   # Enable Touch ID for sudo.
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   # Default system settings.
   system.defaults = {
