@@ -21,8 +21,8 @@ bind-key -n C-b send-prefix
 unbind '"'
 unbind '%'
 
-bind -n C-h split-window -h -c "#{pane_current_path}" # Horizontal split
-bind -n C-v split-window -v -c "#{pane_current_path}" # Vertical split
+bind -n C-v split-window -h -c "#{pane_current_path}" # Vertical split
+bind -n C-h split-window -v -c "#{pane_current_path}" # Horizontal split
 
 # Config reload
 unbind r
