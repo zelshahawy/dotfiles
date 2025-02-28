@@ -165,8 +165,8 @@
     enable = true;
     profiles.default.userSettings = {
       "editor.formatOnSave" = true;
+      "workbench.colorTheme" = "Catppuccin Mocha";
     };
   };
-
 }
 
