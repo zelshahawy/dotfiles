@@ -39,7 +39,7 @@
       sshk = "kitty +kitten ssh"; # Currently deprecated.
       c = "clear";
     } // (
-      let servers = [ "ra" "amun" "set" "anubis" "seshat" "hathor" "thoth" "maat" ];
+      let servers = [ "ra" "amun" "set" "anubis" "seshat" "hathor" "thoth" "maat" "sekhmet" ];
       in
       builtins.listToAttrs (map
         (server: {

@@ -35,6 +35,7 @@
     llvmPackages_19.clang-unwrapped
     yarn
     azure-cli
+    nodejs_23
   ];
 
   # Homebrew configuration.
