@@ -64,6 +64,7 @@
       "docker"
       "firefox@developer-edition"
       "adobe-creative-cloud"
+      "discord"
     ];
     taps = [
       "homebrew/services"
