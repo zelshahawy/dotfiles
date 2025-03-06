@@ -86,7 +86,7 @@
   programs.zsh.oh-my-zsh = {
     enable = true;
     plugins = [ "git" "svn" ];
-    theme = "agnoster";
+    custom = "$HOME/.config/nix/etc/oh-my-zsh/themes/";
   };
 
   # Enable neovim.
@@ -103,6 +103,11 @@
     settings = {
       background_blur = 1;
     };
+  };
+
+  programs.starship = {
+    enable = true;
+    enableZshIntegration = true;
   };
 
   # alacritty terminal configuration.
