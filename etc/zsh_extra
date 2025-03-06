@@ -28,7 +28,6 @@ build_prompt() {
     prompt_end
 }  '
 
-ZSH_THEME="spaceship"
 export PATH="/run/current-system/sw/bin/:$PATH"
 export PATH="$PATH:$HOME/go/bin"
 export TERM="xterm-256color"
