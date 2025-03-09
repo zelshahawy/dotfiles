@@ -63,7 +63,6 @@
       "1password"
       "docker"
       "firefox@developer-edition"
-      "adobe-creative-cloud"
       "discord"
     ];
     taps = [
