@@ -69,9 +69,7 @@
     taps = [
       "homebrew/services"
     ];
-    masApps = {
-      Xcode = 497799835;
-    };
+    masApps = { };
   };
 
   # Enable Touch ID for sudo.
