@@ -95,6 +95,10 @@
   # kitty terminal configuration.
   programs.kitty = {
     enable = true;
+    package = pkgs.kitty.overrideAttrs (oldAttrs: {
+      # https://github.com/NixOS/nixpkgs/issues/388020
+      doInstallCheck = false;
+    });
     font = {
       size = 19;
       name = "FiraCode Nerd Font Mono Light";

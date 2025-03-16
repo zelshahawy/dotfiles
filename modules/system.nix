@@ -36,6 +36,7 @@
     yarn
     azure-cli
     nodejs_23
+    python312Packages.ipython
   ];
 
   # Homebrew configuration.
@@ -54,7 +55,6 @@
       "font-fira-code-nerd-font"
       "maccy"
       "anki"
-      "vmware-fusion"
       "slack"
       "obsidian"
       "microsoft-powerpoint"
@@ -64,6 +64,7 @@
       "docker"
       "firefox@developer-edition"
       "discord"
+      "utm"
     ];
     taps = [
       "homebrew/services"
