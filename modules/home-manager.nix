@@ -17,7 +17,6 @@
   programs.eza.enable = true;
   programs.go.enable = true;
   programs.lf.enable = true;
-  programs.fastfetch.enable = true;
   programs.zsh.syntaxHighlighting.enable = true;
   programs.zsh.autosuggestion.enable = true;
   programs.tealdeer.enable = true;
@@ -180,6 +179,10 @@
       "editor.formatOnSave" = true;
       "workbench.colorTheme" = "Catppuccin Mocha";
     };
+  };
+
+  programs.fastfetch = {
+    enable = true;
   };
 }
 
