@@ -38,6 +38,7 @@
       e = "exit";
       sshk = "kitty +kitten ssh"; # Currently deprecated.
       c = "clear";
+      npush = "sh ~/.config/nix/.push.sh";
     } // (
       let servers = [ "ra" "amun" "set" "anubis" "seshat" "hathor" "thoth" "maat" "sekhmet" ];
       in
