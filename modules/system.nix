@@ -37,6 +37,7 @@
     azure-cli
     nodejs_23
     python312Packages.ipython
+    lua
   ];
 
   # Homebrew configuration.
@@ -116,6 +117,7 @@
   };
   services.jankyborders = {
     enable = true;
+    package = pkgs.jankyborders;
     style = "round";
     width = 6.0;
     hidpi = false;
@@ -125,4 +127,3 @@
     blur_radius = 25.0;
   };
 }
-
