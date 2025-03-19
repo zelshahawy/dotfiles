@@ -99,5 +99,20 @@
     automatic = true;
     options = "--delete-older-than 15d";
   };
+  services.yabai = {
+    enable = true;
+    package = pkgs.yabai; # Use Yabai from Nix packages
+    config = {
+      # Here you can set Yabai options declaratively
+      layout = "bsp";
+      window_gap = 10;
+      mouse_follows_focus = "off";
+      window_border = "on";
+    };
+    extraConfig = ''
+      # You can also include raw yabai commands, e.g. rules
+      yabai -m rule --add app="Finder" manage=off
+    '';
+  };
 }
 
