@@ -51,6 +51,10 @@
     brews = [
       "mongodb/brew/mongodb-community"
       "redis"
+      "thefuck"
+      "sketchybar"
+      "jq"
+      "gh"
     ];
     casks = [
       "font-fira-code-nerd-font"
@@ -66,9 +70,11 @@
       "firefox@developer-edition"
       "discord"
       "utm"
+      "sf-symbols"
     ];
     taps = [
       "homebrew/services"
+      "FelixKratz/formulae"
     ];
     masApps = { };
   };
@@ -103,17 +109,7 @@
   services.yabai = {
     enable = true;
     package = pkgs.yabai; # Use Yabai from Nix packages
-    config = {
-      # Here you can set Yabai options declaratively
-      layout = "bsp";
-      window_gap = 10;
-      mouse_follows_focus = "off";
-      window_border = "on";
-    };
-    extraConfig = ''
-      # You can also include raw yabai commands, e.g. rules
-      yabai -m rule --add app="Finder" manage=off
-    '';
+    extraConfig = builtins.readFile ../etc/yabairc;
   };
   services.jankyborders = {
     enable = true;
@@ -126,4 +122,5 @@
     background_color = "0x302c2e34";
     blur_radius = 25.0;
   };
+
 }

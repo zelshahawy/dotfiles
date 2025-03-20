@@ -20,6 +20,10 @@
   programs.zsh.syntaxHighlighting.enable = true;
   programs.zsh.autosuggestion.enable = true;
   programs.tealdeer.enable = true;
+  # programs.thefuck = {
+  #  enable = true;
+  #  enableZshIntegration = true;
+  # };
 
   # User dotfiles.
   home.file.".vimrc".source = ../etc/vim_configuration;
