@@ -122,5 +122,14 @@
     background_color = "0x302c2e34";
     blur_radius = 25.0;
   };
+  services.skhd = {
+    enable = true;
+    skhdConfig = builtins.readFile ../etc/skhdrc;
+  };
+  launchd.user.agents.skhd.serviceConfig =
+    {
+      StandardErrorPath = "/tmp/skhd.stderr.log";
+      StandardOutPath = "/tmp/skhd.stdout.log";
+    };
 
 }

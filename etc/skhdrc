@@ -1,0 +1,61 @@
+# focus window
+lalt - h : yabai -m window --focus west
+lalt - j : yabai -m window --focus south
+lalt - k : yabai -m window --focus north
+lalt - l : yabai -m window --focus east
+
+# focus display
+lalt + ctrl - k : yabai -m display --focus 2
+lalt + ctrl - j : yabai -m display --focus 1
+
+# move managed window across displays
+lalt + ctrl + shift - k : yabai -m window --display 2; yabai -m display --focus 2
+lalt + ctrl + shift - j : yabai -m window --display 1; yabai -m display --focus 1
+
+# swap managed window
+shift + lalt - h : yabai -m window --swap west
+shift + lalt - j : yabai -m window --swap south
+shift + lalt - k : yabai -m window --swap north
+shift + lalt - l : yabai -m window --swap east
+
+# move managed window
+shift + lalt + ctrl - h : yabai -m window --warp west
+shift + lalt + ctrl - j : yabai -m window --warp south
+shift + lalt + ctrl - k : yabai -m window --warp north
+shift + lalt + ctrl - l : yabai -m window --warp east
+
+# rotate tree
+lalt - r : yabai -m space --rotate 90
+
+# toggle window fullscreen zoom
+lalt - f : yabai -m window --toggle zoom-fullscreen;
+
+# toggle padding and gap
+lalt - g : yabai -m space --toggle padding; yabai -m space --toggle gap
+
+# float / unfloat window and center on screen
+lalt - t : yabai -m window --toggle float;\
+          yabai -m window --grid 4:4:1:1:2:2;\
+	  sketchybar --trigger window_focus
+
+# toggle window split type
+lalt - e : yabai -m window --toggle split
+
+# balance size of windows
+shift + lalt - 0 : yabai -m space --balance
+
+# move window and focus desktop
+shift + lalt - 1 : yabai -m window --space 1 && sketchybar --trigger windows_on_spaces; yabai -m space --focus 1
+shift + lalt - 2 : yabai -m window --space 2 && sketchybar --trigger windows_on_spaces; yabai -m space --focus 2
+shift + lalt - 3 : yabai -m window --space 3 && sketchybar --trigger windows_on_spaces; yabai -m space --focus 3
+shift + lalt - 4 : yabai -m window --space 4 && sketchybar --trigger windows_on_spaces; yabai -m space --focus 4
+shift + lalt - 5 : yabai -m window --space 5 && sketchybar --trigger windows_on_spaces; yabai -m space --focus 5
+shift + lalt - 6 : yabai -m window --space 6 && sketchybar --trigger windows_on_spaces; yabai -m space --focus 6
+shift + lalt - 7 : yabai -m window --space 7 && sketchybar --trigger windows_on_spaces; yabai -m space --focus 7
+shift + lalt - 8 : yabai -m window --space 8 && sketchybar --trigger windows_on_spaces; yabai -m space --focus 8
+shift + lalt - 9 : yabai -m window --space 9 && sketchybar --trigger windows_on_spaces; yabai -m space --focus 9
+
+# fast focus desktop
+lalt - tab : yabai -m space --focus recent
+
+
