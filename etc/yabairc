@@ -36,6 +36,10 @@ yabai -m config left_padding                 10
 yabai -m config right_padding                10
 yabai -m config window_gap                   10
 
+# Window resizing
+lalt + ctrl - h : yabai -m window --resize east:-20:0
+lalt + ctrl - l : yabai -m window --resize west:-20:0
+
 # apps to not manage (ignore)
 yabai -m rule --add app="^Archive Utility$" manage=off
 yabai -m rule --add app="^Music$" manage=off
