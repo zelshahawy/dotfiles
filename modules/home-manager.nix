@@ -105,7 +105,7 @@
     });
     font = {
       size = 19;
-      name = "FiraCode Nerd Font Mono Light";
+      name = "SF Mono Light";
     };
     themeFile = "Catppuccin-Mocha";
     settings = {

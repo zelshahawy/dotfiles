@@ -32,7 +32,6 @@
     nurl
     nil
     nixpkgs-fmt
-    llvmPackages_19.clang-unwrapped
     yarn
     azure-cli
     nodejs_23
@@ -55,9 +54,9 @@
       "sketchybar"
       "jq"
       "gh"
+      "gcc"
     ];
     casks = [
-      "font-fira-code-nerd-font"
       "maccy"
       "anki"
       "slack"
@@ -71,6 +70,8 @@
       "discord"
       "utm"
       "sf-symbols"
+      "font-sf-mono"
+      "font-sf-pro"
     ];
     taps = [
       "homebrew/services"
