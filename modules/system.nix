@@ -8,6 +8,7 @@
 
   # Set the host platform (for Apple Silicon use "aarch64-darwin").
   nixpkgs.hostPlatform = "aarch64-darwin";
+  nix.optimise.automatic = true;
 
   # User configuration.
   users.users.ziadelshahawy = {
