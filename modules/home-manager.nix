@@ -189,5 +189,9 @@
     enable = true;
     settings = builtins.fromJSON (builtins.readFile ../etc/fastfetch.json);
   };
+
+  programs.btop = {
+    enable = true;
+  };
 }
 
