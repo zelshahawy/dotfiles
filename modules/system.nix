@@ -38,6 +38,7 @@
     nodejs_23
     python312Packages.ipython
     lua
+    rustup
   ];
 
   # Homebrew configuration.
