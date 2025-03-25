@@ -33,6 +33,8 @@ local servers = {
       }
     }
   },
+
+  -- Nix LSP
   nil_ls = {
     settings = {
       ['nil'] = {
@@ -46,7 +48,25 @@ local servers = {
         }
       }
     }
+  },
+
+  -- Rust LSP
+  rust_analyzer = {
+    settings = {
+      ['rust-analyzer'] = {
+        checkOnSave = {
+          command = 'clippy'
+        },
+        cargo = {
+          loadOutDirsFromCheck = true
+        },
+        procMacro = {
+          enable = true
+        }
+      }
+    }
   }
+
 }
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
