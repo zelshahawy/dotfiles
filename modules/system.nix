@@ -74,7 +74,6 @@
       "sf-symbols"
       "font-sf-mono"
       "font-sf-pro"
-      "amazon-chime"
     ];
     taps = [
       "homebrew/services"
