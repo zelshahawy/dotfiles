@@ -39,6 +39,7 @@
     python312Packages.ipython
     lua
     rustup
+    postgresql_17_jit
   ];
 
   # Homebrew configuration.
