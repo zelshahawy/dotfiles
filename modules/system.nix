@@ -40,6 +40,7 @@
     lua
     rustup
     postgresql_17_jit
+    just
   ];
 
   # Homebrew configuration.
