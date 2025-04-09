@@ -27,6 +27,7 @@
 
   # User dotfiles.
   home.file.".vimrc".source = ../etc/vim_configuration;
+  home.file.".config/sketchybar".source = ../etc/sketchybar;
   home.file."./.config/nvim/" = {
     source = ../etc/nvim-config;
     recursive = true;
