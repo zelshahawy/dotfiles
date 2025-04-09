@@ -135,6 +135,4 @@
       StandardErrorPath = "/tmp/skhd.stderr.log";
       StandardOutPath = "/tmp/skhd.stdout.log";
     };
-  home.file."../etc/sketchybar".source = ./config;
-
 }
