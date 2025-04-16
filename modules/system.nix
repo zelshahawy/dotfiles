@@ -75,6 +75,7 @@
       "sf-symbols"
       "font-sf-mono"
       "font-sf-pro"
+      "spotify"
     ];
     taps = [
       "homebrew/services"
