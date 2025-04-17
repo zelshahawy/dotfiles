@@ -71,7 +71,6 @@
       "docker"
       "firefox@developer-edition"
       "discord"
-      "utm"
       "sf-symbols"
       "font-sf-mono"
       "font-sf-pro"
