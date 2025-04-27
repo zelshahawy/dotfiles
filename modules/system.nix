@@ -40,6 +40,7 @@
     lua
     rustup
     postgresql_17_jit
+    boost
   ];
 
   # Homebrew configuration.
@@ -58,13 +59,13 @@
       "jq"
       "gh"
       "gcc"
+      "boost"
     ];
     casks = [
       "maccy"
       "anki"
       "slack"
       "obsidian"
-      "microsoft-powerpoint"
       "postman"
       "zoom"
       "1password"
@@ -75,6 +76,7 @@
       "font-sf-mono"
       "font-sf-pro"
       "spotify"
+      "microsoft-teams"
     ];
     taps = [
       "homebrew/services"
