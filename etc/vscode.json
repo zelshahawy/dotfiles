@@ -1,6 +1,5 @@
 {
-  "[css][html][javascript][javascriptreact][json][jsonc][markdown][php][postcss][scss][sql][typescript][typescriptreact][xml][yaml]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[css][html][javascript][javascriptreact][json][jsonc][markdown][php][postcss][scss][sql][typescript][typescriptreact][xml][yaml][python][golang][C]": {
     "editor.rulers": [80],
     "editor.minimap.maxColumn": 80
   },
