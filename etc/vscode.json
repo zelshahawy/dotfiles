@@ -1,0 +1,50 @@
+{
+  "[css][html][javascript][javascriptreact][json][jsonc][markdown][php][postcss][scss][sql][typescript][typescriptreact][xml][yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.rulers": [80],
+    "editor.minimap.maxColumn": 80
+  },
+
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": false,
+  "editor.fontFamily": "Fira Mono, monospace, MesloLGS NF, Noto Color Emoji",
+  "editor.fontLigatures": true,
+  "editor.cursorSurroundingLines": 2,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.smoothScrolling": true,
+
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always",
+    "source.fixAll.eslint": "always",
+    "source.organizeImports": "always",
+    "source.sortMembers": "always"
+  },
+
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.autoSave": "onWindowChange",
+
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "html-eex": "html",
+    "phoenix-heex": "html",
+    "postcss": "css",
+    "svelte": "html"
+  },
+
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.js": "${capture}.d.ts, ${capture}.js.map",
+    "*.ts": "${capture}.test.ts, ${capture}.js"
+  },
+
+  "git.autofetch": true,
+  "git.autoStash": true,
+
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.iconTheme": "material-icon-theme"
+}
+

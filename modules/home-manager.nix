@@ -178,10 +178,7 @@
 
   programs.vscode = {
     enable = true;
-    profiles.default.userSettings = {
-      "editor.formatOnSave" = true;
-      "workbench.colorTheme" = "Catppuccin Mocha";
-    };
+    profiles.default.userSettings = builtins.fromJSON (builtins.readFile ../etc/vscode.json);
   };
 
   programs.fastfetch = {

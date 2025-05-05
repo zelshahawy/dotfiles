@@ -41,6 +41,7 @@
     rustup
     postgresql_17_jit
     boost
+    watchman
   ];
 
   # Homebrew configuration.
