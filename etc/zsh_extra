@@ -31,5 +31,7 @@ build_prompt() {
 export PATH="/run/current-system/sw/bin/:$PATH"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export TERM="xterm-256color"
+
 fastfetch
