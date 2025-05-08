@@ -34,8 +34,6 @@
     nil
     nixpkgs-fmt
     yarn
-    azure-cli
-    nodejs_23
     python312Packages.ipython
     lua
     rustup
