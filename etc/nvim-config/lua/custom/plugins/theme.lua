@@ -7,7 +7,7 @@ return {
       vim.cmd.colorscheme 'catppuccin'
     end,
     opts = {
-      flavour = "Latte",
+      flavour = "Macchiato",
       transparent_background = true,
       styles = {
         comments = {},
