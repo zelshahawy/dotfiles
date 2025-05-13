@@ -54,7 +54,7 @@
         servers)
     );
 
-    initExtra = builtins.readFile ../etc/zsh_extra;
+    initContent = builtins.readFile ../etc/zsh_extra;
     plugins = [
       {
         name = "you-should-use";
@@ -78,7 +78,7 @@
   # Git configuration.
   programs.git = {
     enable = true;
-    userName = "Ziad Elshahawy";
+    userName = "Ziad A. Elshahawy";
     userEmail = "ziadelshahawygit@gmail.com";
     ignores = [ ".DS_Store" "*.lock" ];
     extraConfig = {
@@ -122,7 +122,7 @@
 
   # alacritty terminal configuration.
   programs.alacritty = {
-    enable = true;
+    enable = false;
     settings = {
       general =
         let
