@@ -16,6 +16,7 @@
     home = "/Users/ziadelshahawy";
   };
 
+  system.primaryUser = "ziadelshahawy";
   # Enable zsh.
   programs.zsh.enable = true;
 
@@ -33,13 +34,13 @@
     nurl
     nil
     nixpkgs-fmt
-    yarn
     python312Packages.ipython
     lua
     rustup
     postgresql_17_jit
     boost
     watchman
+    cmake
   ];
 
   # Homebrew configuration.
@@ -76,6 +77,7 @@
       "font-sf-pro"
       "spotify"
       "microsoft-teams"
+      "utm"
     ];
     taps = [
       "homebrew/services"

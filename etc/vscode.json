@@ -43,7 +43,7 @@
   "git.autofetch": true,
   "git.autoStash": true,
 
-  "workbench.colorTheme": "Catppuccin Latte",
+  "workbench.colorTheme": "Catppuccin Mocha",
   "workbench.iconTheme": "material-icon-theme"
 }
 

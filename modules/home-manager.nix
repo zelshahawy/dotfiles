@@ -37,7 +37,7 @@
   programs.zsh = {
     enable = true;
     shellAliases = {
-      switch = "darwin-rebuild switch --flake ~/.config/nix";
+      switch = "sudo darwin-rebuild switch --flake ~/.config/nix";
       uclinux = "ssh zelshahawy@linux.cs.uchicago.edu";
       e = "exit";
       sshk = "kitty +kitten ssh"; # Currently deprecated.
@@ -162,7 +162,7 @@
 
   # bat configuration.
   programs.bat = {
-    enable = true;
+    enable = false;
     syntaxes = {
       gleam = {
         src = pkgs.fetchFromGitHub {
