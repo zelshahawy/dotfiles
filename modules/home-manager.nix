@@ -16,10 +16,11 @@
 
   programs.eza.enable = true;
   programs.go.enable = true;
-  programs.lf.enable = true;
+  programs.lf.enable = false;
   programs.zsh.syntaxHighlighting.enable = true;
   programs.zsh.autosuggestion.enable = true;
   programs.tealdeer.enable = true;
+  programs.uv.enable = true;
   # programs.thefuck = {
   #  enable = true;
   #  enableZshIntegration = true;
@@ -187,7 +188,7 @@
   };
 
   programs.btop = {
-    enable = true;
+    enable = false;
   };
 }
 
