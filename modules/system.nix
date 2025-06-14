@@ -41,6 +41,7 @@
     boost
     watchman
     cmake
+    redis
   ];
 
   # Homebrew configuration.
@@ -74,10 +75,6 @@
       "discord"
       "sf-symbols"
       "font-sf-mono"
-      "font-sf-pro"
-      "spotify"
-      "microsoft-teams"
-      "utm"
     ];
     taps = [
       "homebrew/services"
