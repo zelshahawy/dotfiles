@@ -39,7 +39,6 @@
     rustup
     postgresql_17_jit
     boost
-    watchman
     cmake
     redis
   ];
@@ -70,11 +69,12 @@
       "postman"
       "zoom"
       "1password"
-      "docker"
+      "docker-desktop"
       "firefox@developer-edition"
       "discord"
       "sf-symbols"
       "font-sf-mono"
+      "loom"
     ];
     taps = [
       "homebrew/services"
@@ -99,8 +99,8 @@
     finder = {
       AppleShowAllExtensions = true;
       ShowPathbar = true;
-      FXEnableExtensionChangeWarning = false;
-      AppleShowAllFiles = false;
+      FXEnableExtensionChangeWarning = true;
+      AppleShowAllFiles = true;
     };
     trackpad = { };
   };
