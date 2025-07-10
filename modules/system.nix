@@ -27,7 +27,7 @@
   environment.systemPackages = with pkgs; [
     ncdu
     subversion
-    python312
+    python311
     gopls
     mas
     python312Packages.python-lsp-server
