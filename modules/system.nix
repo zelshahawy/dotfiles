@@ -74,7 +74,7 @@
       "discord"
       "sf-symbols"
       "font-sf-mono"
-      "loom"
+      "google-chrome"
     ];
     taps = [
       "homebrew/services"
