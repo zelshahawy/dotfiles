@@ -1,4 +1,5 @@
 return {
+  --[[
     'catppuccin/nvim',
     name = 'catppuccin',
     priority = 1000,
@@ -42,4 +43,11 @@ return {
         which_key = true,
       },
     }
-  }
+   ]]
+  "hyperb1iss/silkcircuit-nvim",
+  lazy = false,
+  priority = 1000,
+  config = function()
+    vim.cmd.colorscheme("silkcircuit")
+  end,
+}

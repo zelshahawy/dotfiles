@@ -23,7 +23,6 @@
       systemModule = import ./modules/system.nix;
       homeModule = import ./modules/home-manager.nix;
 
-
     in
     {
       darwinConfigurations."Ziads-MacBook-Air" = nix-darwin.lib.darwinSystem {
