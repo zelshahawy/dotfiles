@@ -30,7 +30,6 @@
     python311
     gopls
     mas
-    python312Packages.python-lsp-server
     nurl
     nil
     nixpkgs-fmt
@@ -41,7 +40,17 @@
     boost
     cmake
     redis
+    pyright
+    vcpkg
+
+    (python3.withPackages (ps: with ps; [
+      python-lsp-server
+      yapf
+      ruff
+      mypy
+    ]))
   ];
+
 
   # Homebrew configuration.
   homebrew = {

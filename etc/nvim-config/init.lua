@@ -46,14 +46,16 @@ require('lazy').setup('custom.plugins', {
 })
 
 require 'custom.configs'
-  
+
 local opts = { noremap = true, silent = true }
 vim.cmd [[ au VimLeave * set guicursor=a:ver20 ]]
 --NOTE
-vim.api.nvim_set_keymap( -- NOTE:Used for setting up formatting for lsp
-  'n',                    -- Normal mode
-  '<C-f>',                -- Key combination (Ctrl+F)
-  '<cmd>lua vim.lsp.buf.format({ async = true })<CR>', opts) -- Command to invoke formatting -- Options: no remapping and silent execution
+vim.api.nvim_set_keymap(
+  'n',
+  '<C-f>',
+  '<cmd>lua vim.lsp.buf.format({ async = true })<CR>',
+  { noremap = true, silent = false }
+)
 vim.keymap.set("n", "<C-,>", vim.diagnostic.open_float, opts)
 
 

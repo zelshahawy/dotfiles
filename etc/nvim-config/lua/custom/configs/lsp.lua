@@ -14,24 +14,26 @@ local servers = {
   -- Ansible LSP
 
   -- Python LSP with additional plugins
-  pylsp = {
+  pyright = {
     settings = {
-      pylsp = {
-        plugins = {
-          ruff = {
-            enabled = true,
-            extendSelect = { 'I' }
-          },
-          mypy = {
-            enabled = true
-          },
-          yapf = {
-            enabled = true
-          },
+      python = {
+        analysis = {
+          typeCheckingMode = 'basic',
+          autoSearchPaths = true,
+          useLibraryCodeForTypes = true,
         },
-        configurationSources = { 'mypy', 'ruff', 'yapf' }
-      }
-    }
+        formatting = {
+          provider = 'yapf',
+        },
+        linting = {
+          enabled = true,
+          pylintEnabled = false,
+          flake8Enabled = false,
+          mypyEnabled = true,
+          ruffEnabled = true,
+        },
+      },
+    },
   },
 
   -- Nix LSP
