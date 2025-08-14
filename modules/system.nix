@@ -33,15 +33,11 @@
     nurl
     nil
     nixpkgs-fmt
-    python312Packages.ipython
     lua
     rustup
     postgresql_17_jit
-    boost
     cmake
     redis
-    pyright
-    vcpkg
 
     (python3.withPackages (ps: with ps; [
       python-lsp-server
@@ -66,7 +62,6 @@
       "thefuck"
       "sketchybar"
       "jq"
-      "gh"
       "gcc"
       "boost"
     ];
