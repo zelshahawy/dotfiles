@@ -36,7 +36,6 @@
     lua
     rustup
     postgresql_17_jit
-    cmake
     redis
 
     (python3.withPackages (ps: with ps; [
@@ -64,6 +63,9 @@
       "jq"
       "gcc"
       "boost"
+      "cmake"
+      "pkg-config"
+      "ninja"
     ];
     casks = [
       "maccy"
