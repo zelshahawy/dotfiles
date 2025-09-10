@@ -66,6 +66,7 @@
       "cmake"
       "pkg-config"
       "ninja"
+      "basedpyright"
     ];
     casks = [
       "maccy"
