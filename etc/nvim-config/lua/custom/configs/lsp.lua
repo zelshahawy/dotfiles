@@ -14,26 +14,15 @@ local servers = {
   -- Ansible LSP
 
   -- Python LSP with additional plugins
-  pyright = {
+
+  basedpyright = {
     settings = {
-      python = {
-        analysis = {
-          typeCheckingMode = 'basic',
-          autoSearchPaths = true,
-          useLibraryCodeForTypes = true,
-        },
-        formatting = {
-          provider = 'yapf',
-        },
-        linting = {
-          enabled = true,
-          pylintEnabled = false,
-          flake8Enabled = false,
-          mypyEnabled = true,
-          ruffEnabled = true,
-        },
-      },
-    },
+      analysis = {
+        inlayHints = {
+          callArgumentNames = false,
+        }
+      }
+    }
   },
 
   -- Nix LSP
