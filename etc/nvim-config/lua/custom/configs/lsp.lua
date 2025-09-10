@@ -14,6 +14,7 @@ local servers = {
   -- Ansible LSP
 
   -- Python LSP with additional plugins
+  ruff = {},
 
   basedpyright = {
     settings = {
