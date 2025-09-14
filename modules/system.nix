@@ -37,6 +37,7 @@
     rustup
     postgresql_17_jit
     redis
+    pixi
 
     (python3.withPackages (ps: with ps; [
       python-lsp-server
