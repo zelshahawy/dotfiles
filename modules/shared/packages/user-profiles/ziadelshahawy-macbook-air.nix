@@ -1,4 +1,4 @@
-# Package profile for fadyadal on macbook-air
+# Package profile for ziad Elshahawy on macbook-air
 { pkgs }:
 
 let

@@ -14,6 +14,7 @@ with pkgs; let
     ps.python-lsp-server
     ps.setuptools
     ps.virtualenv
+    ps.ruff
   ]);
 in
 [
@@ -30,6 +31,7 @@ in
   cmake
   pkgconf
   tree-sitter
+  redis
 
   # Common libraries
   openssl
@@ -38,7 +40,6 @@ in
 
   # Python
   myPython
-  uv
 
   # Core development
   nodejs

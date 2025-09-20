@@ -21,15 +21,13 @@
       "font-sf-pro"
       "ghostty"
       "licecap"
-      "rstudio"
       "shottr"
       "slack"
       "spotify"
-      "steam"
       "whatsapp"
-      "whisky"
       "xquartz"
       "zoom"
+      "google-chrome"
     ];
   };
 }

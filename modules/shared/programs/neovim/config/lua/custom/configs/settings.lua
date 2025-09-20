@@ -59,14 +59,14 @@ vim.opt.foldlevelstart = 99
 -- always show tabline
 -- vim.optpt.showtabline = 2
 
-local fady_group = vim.api.nvim_create_augroup('FadyGroup', { clear = true })
+local ziad_group = vim.api.nvim_create_augroup('ZiadGroup', { clear = true })
 
 -- Highlight on yank
 vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()
     vim.highlight.on_yank()
   end,
-  group = fady_group,
+  group = ziad_group,
   pattern = '*',
 })
 

@@ -26,6 +26,7 @@ in
       cp = "xcp";
       q = "exit";
       n = "nvim";
+      uclinux = "ssh zelshahawy@linux.cs.uchicago.edu";
     } // (
       let servers = [ "ra" "amun" "set" "anubis" "seshat" "hathor" "thoth" "maat" "sekhmet" ];
       in
