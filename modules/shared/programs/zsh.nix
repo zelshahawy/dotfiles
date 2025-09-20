@@ -15,6 +15,12 @@ in
       source ${catppuccin-zsh-syntax-highlighting}/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
       eval $(opam env)
       export PATH=~/.local/bin:/usr/local/smlnj/bin:$PATH
+      export PATH="/run/current-system/sw/bin/:$PATH"
+      export PATH="$PATH:$HOME/go/bin"
+      export PATH="$HOME/.cargo/bin:$PATH"
+      export PATH="$HOME/.local/bin:$PATH"
+      export TERM="xterm-256color"
+
     '';
     shellAliases = {
       cp = "xcp";
@@ -26,10 +32,21 @@ in
       builtins.listToAttrs (map
         (server: {
           name = server;
-          value = "ssh fady@${server}.cs.uchicago.edu";
+          value = "ssh zelshahawy@${server}.cs.uchicago.edu";
         })
         servers)
     );
+    plugins = [
+      {
+        name = "you-should-use";
+        src = pkgs.fetchFromGitHub {
+          owner = "MichaelAquilina";
+          repo = "zsh-you-should-use";
+          rev = "f13d39a1ae84219e4ee14e77d31bb774c91f2fe3";
+          hash = "sha256-+3iAmWXSsc4OhFZqAMTwOL7AAHBp5ZtGGtvqCnEOYc0=";
+        };
+      }
+    ];
   };
 
 }
