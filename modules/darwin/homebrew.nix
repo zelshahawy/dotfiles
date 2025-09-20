@@ -28,6 +28,12 @@
       "xquartz"
       "zoom"
       "google-chrome"
+      "livewallpaper"
+    ];
+
+    taps = [
+      "homebrew/services"
+      "thusvill/livewallpaper"
     ];
   };
 }
