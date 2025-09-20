@@ -6,6 +6,7 @@
     ./vscode.nix
     ./tmux.nix
     ./zsh.nix
+    ./kitty.nix
   ];
 
   programs.atuin = {
@@ -26,10 +27,11 @@
   programs.fd.enable = true;
   programs.fzf.enable = true;
   programs.lazygit.enable = true;
-  programs.nh = {
-    enable = true;
-  };
+  programs.go.enable = true;
+  programs.nh.enable = true;
   programs.ripgrep.enable = true;
   programs.vim.enable = true;
   programs.zoxide.enable = true;
+  programs.uv.enable = true;
+  programs.tealdeer.enable = true;
 }
