@@ -8,6 +8,7 @@
     ./zsh.nix
     ./kitty.nix
     ./ghosty.nix
+    ./starship.nix
   ];
 
   programs.atuin = {

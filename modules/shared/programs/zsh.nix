@@ -20,6 +20,8 @@ in
       export PATH="$HOME/.cargo/bin:$PATH"
       export PATH="$HOME/.local/bin:$PATH"
       prompt_context(){}
+
+      eval "$(starship init zsh)"
     '';
     shellAliases = {
       cp = "xcp";

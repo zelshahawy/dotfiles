@@ -9,8 +9,13 @@ in
 {
   programs.starship = {
     enable = true;
-    settings = {
-      palette = "catppuccin_${theme}";
-    } // builtins.fromTOML (builtins.readFile "${catppuccin-starship}/themes/${theme}.toml");
+    settings =
+      (builtins.fromTOML (builtins.readFile "${catppuccin-starship}/themes/${theme}.toml"))
+      // {
+        palette = "catppuccin_${theme}";
+        username = { disabled = true; };
+        hostname = { disabled = true; };
+      };
   };
 }
+

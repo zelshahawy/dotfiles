@@ -64,7 +64,7 @@ local ziad_group = vim.api.nvim_create_augroup('ZiadGroup', { clear = true })
 -- Highlight on yank
 vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()
-    vim.highlight.on_yank()
+    vim.hl.on_yank()
   end,
   group = ziad_group,
   pattern = '*',

@@ -46,22 +46,20 @@ local servers = {
 }
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
-local capabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+local function merge(a, b) return vim.tbl_deep_extend('force', a or {}, b or {}) end
+
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 -- Set up each server
-for server, opts in pairs(servers) do
-  local base_config = {
-    capabilities = capabilities,
+for name, opts in pairs(servers) do
+  local base = {
     on_attach = on_attach,
-    settings = servers[server],
-    filetypes = (servers[server] or {}).filetypes,
+    capabilities = capabilities,
   }
-
-  for opt, value in pairs(opts) do
-    base_config[opt] = value
-  end
-  require('lspconfig')[server].setup(base_config)
+  vim.lsp.config(name, merge(base, opts))
 end
 
+vim.lsp.enable(vim.tbl_keys(servers))
 -- vim: ts=2 sts=2 sw=2 et
