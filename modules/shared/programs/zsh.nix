@@ -19,16 +19,18 @@ in
       export PATH="$PATH:$HOME/go/bin"
       export PATH="$HOME/.cargo/bin:$PATH"
       export PATH="$HOME/.local/bin:$PATH"
-
+      prompt_context(){}
     '';
     shellAliases = {
       cp = "xcp";
       q = "exit";
       n = "nvim";
+      c = "clear";
+      switch = "sudo darwin-rebuild switch --flake";
       uclinux = "ssh zelshahawy@linux.cs.uchicago.edu";
       gst = "git status -sb";
       ga  = "git add";
-      gaa = "git add -A";
+      gau = "git add -u";
       gc  = "git commit";
       gcm = "git commit -m";
       gco = "git checkout";
