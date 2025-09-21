@@ -4,6 +4,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
+    mac-app-util.url = "github:hraban/mac-app-util";
+
     home-manager = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager/master";
@@ -17,14 +19,20 @@
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
   };
 
-  outputs = { self, nix-darwin, nix-homebrew, home-manager, nixpkgs, ... }@inputs:
+  outputs = { self, nix-darwin, nix-homebrew, home-manager, nixpkgs, mac-app-util,  ... }@inputs:
     let
       # Common system builder function for Darwin
       mkDarwinSystem = { hostname, system ? "aarch64-darwin", extraModules ? [ ] }:
         nix-darwin.lib.darwinSystem {
           inherit system;
           modules = [
+            mac-app-util.darwinModules.default
             home-manager.darwinModules.home-manager
+            {
+            home-manager.sharedModules = [
+                mac-app-util.homeManagerModules.default
+            ];
+          }
             nix-homebrew.darwinModules.nix-homebrew
             {
               nix-homebrew = {
@@ -61,10 +69,10 @@
           hostname = "macbook-air";
           system = "aarch64-darwin";
         };
-        #"mac-mini" = mkDarwinSystem { 
-        #  hostname = "mac-mini"; 
-        #  system = "aarch64-darwin"; 
-        #};
+        "mac-mini" = mkDarwinSystem {
+          hostname = "mac-mini";
+          system = "aarch64-darwin";
+        };
       };
 
       # Build nixos flake using:

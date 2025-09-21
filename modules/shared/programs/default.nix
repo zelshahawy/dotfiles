@@ -7,6 +7,7 @@
     ./tmux.nix
     ./zsh.nix
     ./kitty.nix
+    ./ghosty.nix
   ];
 
   programs.atuin = {

@@ -1,7 +1,7 @@
-{...}:
+{ pkgs, ... }:
 {
   programs.kitty = {
-    enable = true;
+    enable = false;
     package = pkgs.kitty.overrideAttrs (oldAttrs: {
       doInstallCheck = false;
     });

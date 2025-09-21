@@ -26,7 +26,7 @@ with pkgs; [
   # fstar
   lua5_4
   ollama
-  # opam
+  opam
   # qemu
   z3
 ]

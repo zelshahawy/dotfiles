@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 let
   catppuccin-zsh-syntax-highlighting = builtins.fetchGit {
     url = "https://github.com/catppuccin/zsh-syntax-highlighting.git";
@@ -19,7 +19,6 @@ in
       export PATH="$PATH:$HOME/go/bin"
       export PATH="$HOME/.cargo/bin:$PATH"
       export PATH="$HOME/.local/bin:$PATH"
-      export TERM="xterm-256color"
 
     '';
     shellAliases = {
@@ -27,6 +26,18 @@ in
       q = "exit";
       n = "nvim";
       uclinux = "ssh zelshahawy@linux.cs.uchicago.edu";
+      gst = "git status -sb";
+      ga  = "git add";
+      gaa = "git add -A";
+      gc  = "git commit";
+      gcm = "git commit -m";
+      gco = "git checkout";
+      gcb = "git checkout -b";
+      gpl = "git pull --rebase";
+      gps = "git push";
+      gd  = "git diff";
+      gds = "git diff --staged";
+      gl  = "git log --oneline --graph --decorate --all";
     } // (
       let servers = [ "ra" "amun" "set" "anubis" "seshat" "hathor" "thoth" "maat" "sekhmet" ];
       in

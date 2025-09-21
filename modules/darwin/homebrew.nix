@@ -16,15 +16,13 @@
     ];
 
     casks = [
-      "firefox"
+      "firefox@developer-edition"
       "font-sf-mono"
       "font-sf-pro"
-      "ghostty"
       "licecap"
       "shottr"
       "slack"
       "spotify"
-      "whatsapp"
       "xquartz"
       "zoom"
       "google-chrome"
