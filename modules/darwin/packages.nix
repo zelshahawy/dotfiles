@@ -1,4 +1,4 @@
-{ pkgs, hostname ? "macbook-air", ... }:
+{ pkgs, hostname ? "ziads-macbook-air", ... }:
 
 let
   shared-packages = import ../shared/packages.nix { inherit pkgs; };

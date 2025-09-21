@@ -66,11 +66,11 @@
       # $ darwin-rebuild build --flake .#macbook-pro
       darwinConfigurations = {
         "macbook-air" = mkDarwinSystem {
-          hostname = "macbook-air";
+          hostname = "ziads-macbook-air";
           system = "aarch64-darwin";
         };
         "mac-mini" = mkDarwinSystem {
-          hostname = "mac-mini";
+          hostname = "ziads-mac-mini";
           system = "aarch64-darwin";
         };
       };
@@ -79,13 +79,13 @@
       # $ nixos-rebuild build --flake .#nixos-desktop
       nixosConfigurations = {
         "nixos-desktop" = mkNixosSystem {
-          hostname = "nixos-desktop";
+          hostname = "ziads-nixos-desktop";
           system = "x86_64-linux";
         };
       };
 
       # For backward compatibility
-      darwinConfigurations."Ziads-MacBook-Air" = self.darwinConfigurations."macbook-air";
+      darwinConfigurations."ziads-MacBook-Air" = self.darwinConfigurations."macbook-air";
 
       # For backward compatibility
       darwinPackages = self.darwinConfigurations."macbook-air".pkgs;

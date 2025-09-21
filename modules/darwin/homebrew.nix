@@ -1,6 +1,7 @@
 { ... }:
 
 {
+
   homebrew = {
     enable = true;
     onActivation.cleanup = "zap";
@@ -17,8 +18,10 @@
 
     casks = [
       "firefox@developer-edition"
+      "sf-symbols"   
       "font-sf-mono"
       "font-sf-pro"
+      "ghostty"
       "licecap"
       "shottr"
       "slack"

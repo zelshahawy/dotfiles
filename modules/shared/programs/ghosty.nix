@@ -1,7 +1,7 @@
 {... }:
 {
 programs.ghostty = {
-    enable = true;
+    enable = false;
     settings = {
       font_size = 19;
       theme_file = "Catppuccin-Mocha";

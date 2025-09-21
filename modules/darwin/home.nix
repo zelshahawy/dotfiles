@@ -1,4 +1,4 @@
-{ hostname ? "macbook-air", ... }:
+{ hostname ? "ziads-macbook-air", ... }:
 let
   fullName = "Ziad Elshahawy";
   user = "ziadelshahawy";
@@ -31,6 +31,9 @@ in
           pkgs.callPackage ../shared/packages.nix { inherit pkgs hostname; user = "${user}"; };
         stateVersion = "23.11";
       };
+      home.file."Library/Application Support/com.mitchellh.ghostty/config".text = ''
+      font-size = 17
+    '';
     };
   };
 
