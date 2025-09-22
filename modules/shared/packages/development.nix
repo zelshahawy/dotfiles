@@ -14,6 +14,9 @@ with pkgs; [
   ccls
   languagetool
   nil
+  basedpyright
+  gopls
+
   lua-language-server
   taplo # toml
   texlab # latex

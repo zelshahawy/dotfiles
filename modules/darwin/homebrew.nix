@@ -18,7 +18,7 @@
 
     casks = [
       "firefox@developer-edition"
-      "sf-symbols"   
+      "sf-symbols"
       "font-sf-mono"
       "font-sf-pro"
       "ghostty"
