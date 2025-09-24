@@ -25,6 +25,7 @@ in
   wget
   fastfetch
   dos2unix
+  ncdu
 
   # Build tools
   autoconf
