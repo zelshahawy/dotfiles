@@ -31,12 +31,14 @@ in
       switch = "sudo darwin-rebuild switch --flake";
       uclinux = "ssh zelshahawy@linux.cs.uchicago.edu";
       gst = "git status -sb";
+      gcl = "git clone";
       ga  = "git add";
       gau = "git add -u";
       gc  = "git commit";
       gcm = "git commit -m";
       gco = "git checkout";
       gcb = "git checkout -b";
+      gsw = "git switch";
       gpl = "git pull --rebase";
       gps = "git push";
       gd  = "git diff";
