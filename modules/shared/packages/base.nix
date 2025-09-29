@@ -33,6 +33,7 @@ in
   pkgconf
   tree-sitter
   redis
+  pnpm
 
   # Common libraries
   openssl
