@@ -30,6 +30,7 @@
       "slack"
       "zoom"
       "livewallpaper"
+      "obsidian"
     ];
   };
 }
