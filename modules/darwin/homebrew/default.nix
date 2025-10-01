@@ -28,8 +28,6 @@
       "licecap"
       "shottr"
       "slack"
-      "spotify"
-      "xquartz"
       "zoom"
       "google-chrome"
       "livewallpaper"

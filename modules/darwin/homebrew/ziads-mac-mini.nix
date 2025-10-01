@@ -7,6 +7,8 @@
     casks = [
       "utm"
       "wine"
+      "xquartz"
+      "spotify"
     ];
   };
 }
