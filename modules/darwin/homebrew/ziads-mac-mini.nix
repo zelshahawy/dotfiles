@@ -9,6 +9,7 @@
       "wine"
       "xquartz"
       "spotify"
+      "google-chrome"
     ];
   };
 }

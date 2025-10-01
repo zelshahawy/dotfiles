@@ -29,7 +29,6 @@
       "shottr"
       "slack"
       "zoom"
-      "google-chrome"
       "livewallpaper"
     ];
   };
