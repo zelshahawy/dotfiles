@@ -6,7 +6,7 @@
   system = {
     defaults.smb.NetBIOSName = hostname;
     defaults.dock.tilesize = 48; # Larger dock on mini
-    stateVersion = 4;
+    stateVersion = 5;
   };
 }
 

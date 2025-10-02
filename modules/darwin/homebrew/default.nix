@@ -9,7 +9,6 @@
     onActivation.upgrade    = true;
 
     taps = [
-      "homebrew/services"
       "thusvill/livewallpaper"
     ];
 
