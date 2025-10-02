@@ -30,6 +30,7 @@
       "zoom"
       "livewallpaper"
       "obsidian"
+      "docker-desktop"
     ];
   };
 }
