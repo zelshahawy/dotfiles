@@ -9,6 +9,7 @@
       "xquartz"
       "spotify"
       "google-chrome"
+      "virtualbox"
     ];
   };
 }
