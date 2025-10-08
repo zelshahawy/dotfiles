@@ -22,6 +22,7 @@ with pkgs; [
   typst
   tinymist # typst
   millet # SML
+  nixpkgs-fmt
 
   # Specialized tools
   # elan

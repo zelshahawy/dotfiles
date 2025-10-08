@@ -44,6 +44,7 @@ in
       gd  = "git diff";
       gds = "git diff --staged";
       gl  = "git log --oneline --graph --decorate --all";
+      cat = "bat --paging=never";
     } // (
       let servers = [ "ra" "amun" "set" "anubis" "seshat" "hathor" "thoth" "maat" "sekhmet" ];
       in
