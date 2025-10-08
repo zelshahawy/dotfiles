@@ -1,5 +1,5 @@
 # Common NixOS configuration
-{ config, pkgs, ... }: {
+{ pkgs, ... }: {
   imports = [
     ../../modules/nixos
   ];

@@ -19,7 +19,7 @@
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
   };
 
-  outputs = { self, nix-darwin, nix-homebrew, home-manager, nixpkgs, mac-app-util,  ... }@inputs:
+  outputs = { self, nix-darwin, nix-homebrew, home-manager, nixpkgs, mac-app-util, ... }@inputs:
     let
       # Common system builder function for Darwin
       mkDarwinSystem = { hostname, system ? "aarch64-darwin", extraModules ? [ ] }:
@@ -29,10 +29,10 @@
             mac-app-util.darwinModules.default
             home-manager.darwinModules.home-manager
             {
-            home-manager.sharedModules = [
+              home-manager.sharedModules = [
                 mac-app-util.homeManagerModules.default
-            ];
-          }
+              ];
+            }
             nix-homebrew.darwinModules.nix-homebrew
             {
               nix-homebrew = {

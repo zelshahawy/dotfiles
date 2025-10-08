@@ -32,8 +32,8 @@ in
         stateVersion = "23.11";
       };
       home.file."Library/Application Support/com.mitchellh.ghostty/config".text = ''
-      font-size = 17
-    '';
+        font-size = 17
+      '';
     };
   };
 
