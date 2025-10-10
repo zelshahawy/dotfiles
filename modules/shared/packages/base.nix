@@ -15,6 +15,7 @@ with pkgs; let
     ps.setuptools
     ps.virtualenv
     ps.ruff
+    ps.matplotlib
   ]);
 in
 [
