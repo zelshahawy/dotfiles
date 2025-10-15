@@ -4,9 +4,9 @@
   homebrew = {
     enable = true;
 
-    onActivation.cleanup    = "zap";
+    onActivation.cleanup = "zap";
     onActivation.autoUpdate = true;
-    onActivation.upgrade    = true;
+    onActivation.upgrade = true;
 
     taps = [
       "thusvill/livewallpaper"
@@ -31,6 +31,8 @@
       "livewallpaper"
       "obsidian"
       "docker-desktop"
+      "tailscale-app"
+      "arc"
     ];
   };
 }
