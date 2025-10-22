@@ -32,19 +32,19 @@ in
       uclinux = "ssh zelshahawy@linux.cs.uchicago.edu";
       gst = "git status -sb";
       gcl = "git clone";
-      ga  = "git add";
+      ga = "git add";
       gau = "git add -u";
-      gc  = "git commit";
+      gc = "git commit";
       gcm = "git commit -m";
       gco = "git checkout";
       gcb = "git checkout -b";
       gsw = "git switch";
       gpl = "git pull --rebase";
       gps = "git push";
-      gd  = "git diff";
+      gd = "git diff";
       gds = "git diff --staged";
-      gl  = "git log --oneline --graph --decorate --all";
-      cat = "bat --paging=never";
+      gl = "git log --oneline --graph --decorate --all";
+      cat = "bat --paging=never --style=header,grid";
     } // (
       let servers = [ "ra" "amun" "set" "anubis" "seshat" "hathor" "thoth" "maat" "sekhmet" ];
       in
