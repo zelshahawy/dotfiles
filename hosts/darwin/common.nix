@@ -27,6 +27,7 @@
       finder = {
         AppleShowAllExtensions = true;
         ShowPathbar = true;
+        AppleShowAllFiles = true;
         FXEnableExtensionChangeWarning = false;
       };
     };
