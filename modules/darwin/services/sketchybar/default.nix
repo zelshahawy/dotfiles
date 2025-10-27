@@ -6,14 +6,9 @@ let
       url = "https://github.com/FelixKratz/dotfiles";
       rev = "1589c769e28f110b1177f6a83fa145235c8f7bd6";
       sha256 = "sha256-vo/PmrYlrg6kwBbFtrwbTZffLrQgzTSuqVxfNQba3YI=";
-      fetchSubmodules = true; # <-- the key bit
+      fetchSubmodules = true;
     };
-
-    # helpful if the repo has no ./configure step
     dontConfigure = true;
-
-    # (optional) quick sanity check for debugging
-    # postUnpack = ''echo "Tree:"; ls -la; ls -la .config || true'';
 
     buildInputs = [ pkgs.gnumake pkgs.lua5_4 ];
     buildPhase = ''
@@ -21,7 +16,6 @@ let
       make -C ./.config/sketchybar/helpers
     '';
     installPhase = ''
-      # copy the *contents* of .config/sketchybar into $out
       cp -r ./.config/sketchybar "$out"
     '';
   };
