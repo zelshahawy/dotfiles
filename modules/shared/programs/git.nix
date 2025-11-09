@@ -1,11 +1,11 @@
-{ fullName, email, ... }:
+{ ... }:
 {
   programs.git = {
     enable = true;
     delta.enable = true;
     ignores = [ "*.swp" ".DS_STORE" ];
-    userName = fullName;
-    userEmail = email;
+    userName = "Ziad Elshahawy";
+    userEmail = "ziadelshahawygit@gmail.com ";
     lfs = {
       enable = true;
     };
