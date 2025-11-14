@@ -33,6 +33,7 @@
       "docker-desktop"
       "tailscale-app"
       "arc"
+      "kiro"
     ];
   };
 }
