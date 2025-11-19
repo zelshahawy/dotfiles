@@ -27,6 +27,7 @@ in
   fastfetch
   dos2unix
   ncdu
+  xcp
 
   # Build tools
   autoconf
