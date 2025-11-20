@@ -22,6 +22,7 @@ in
       prompt_context(){}
 
       eval "$(starship init zsh)"
+      tmux
     '';
     shellAliases = {
       cp = "xcp";
