@@ -22,7 +22,14 @@ in
       prompt_context(){}
 
       eval "$(starship init zsh)"
-      tmux
+
+      if command -v tmux >/dev/null 2>&1; then
+        # Only if not already inside tmux, and shell is interactive
+        if [[ -z "$TMUX" && $- == *i* ]]; then
+          tmux attach -t main || tmux new -s main
+        fi
+      fi
+
     '';
     shellAliases = {
       cp = "xcp";
