@@ -33,6 +33,8 @@ in
       };
       home.file."Library/Application Support/com.mitchellh.ghostty/config".text = ''
         font-size = 17
+        background-blur = 20
+        background-opacity = 0.85
       '';
     };
   };
