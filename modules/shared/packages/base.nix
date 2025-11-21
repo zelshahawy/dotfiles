@@ -48,4 +48,5 @@ in
   # Core development
   nodejs
   rustup
+  pixi
 ]
