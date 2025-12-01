@@ -23,12 +23,10 @@ in
 
       eval "$(starship init zsh)"
 
-      if command -v tmux >/dev/null 2>&1; then
-        # Only if not already inside tmux, and shell is interactive
-        if [[ -z "$TMUX" && $- == *i* ]]; then
-          tmux attach -t main || tmux new -s main
-        fi
+      if [ -z "$TMUX" ] && [ -t 1 ] && [ "$TERM_PROGRAM" != "vscode" ]; then
+        exec tmux
       fi
+
 
     '';
     shellAliases = {
