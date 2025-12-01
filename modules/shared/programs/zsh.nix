@@ -23,10 +23,10 @@ in
 
       eval "$(starship init zsh)"
 
-      if [ -z "$TMUX" ] && [ -t 1 ] && [ "$TERM_PROGRAM" != "vscode" ]; then
+
+      if [[ -z "$TMUX" && $- == *i* && "$TERM_PROGRAM" != "vscode" ]]; then
         exec tmux
       fi
-
 
     '';
     shellAliases = {
