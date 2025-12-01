@@ -22,6 +22,7 @@
         plugin = continuum;
         extraConfig = ''
           set -g @continuum-restore 'on'
+          set -g @continuum-save-interval '15'
         '';
       }
       # extrakto
@@ -56,10 +57,14 @@
       # reload configuration
       bind r source-file ~/.config/tmux/tmux.conf 
 
-      set-option -g default-terminal 'alacritty'
-      set-option -sa terminal-features ",alacritty:RGB"
+      set-option -g default-terminal 'tmux-256color'
+      set-option -ag terminal-overrides ",wezterm*:RGB"
+      set-option -ag terminal-overrides ",xterm-256color:RGB"
+      set-option -ag terminal-overrides ",tmux-256color:RGB"
       set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'  # undercurl support
       set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m'  # underscore colours - needs tmux-3.0
+      set -as terminal-features ',*:usstyle'  # enable undercurl style support
+      set -as terminal-features ',wezterm*:RGB'  # enable RGB colors for wezterm
 
       set-option -g focus-events on
 
