@@ -25,7 +25,7 @@ in
 
 
       if [[ -z "$TMUX" && $- == *i* && "$TERM_PROGRAM" != "vscode" ]]; then
-        exec tmux
+        exec tmux new-session -A -s main
       fi
 
     '';
