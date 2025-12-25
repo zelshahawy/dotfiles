@@ -14,11 +14,13 @@ in
     initContent = ''
       source ${catppuccin-zsh-syntax-highlighting}/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
       eval $(opam env)
-      export PATH=~/.local/bin:/usr/local/smlnj/bin:$PATH
-      export PATH="/run/current-system/sw/bin/:$PATH"
-      export PATH="$PATH:$HOME/go/bin"
-      export PATH="$HOME/.cargo/bin:$PATH"
-      export PATH="$HOME/.local/bin:$PATH"
+      
+      path+=(
+        $HOME/go/bin
+        $HOME/.cargo/bin
+        /run/current-system/sw/bin
+        $HOME/.local/bin
+      )
       prompt_context(){}
 
       eval "$(starship init zsh)"

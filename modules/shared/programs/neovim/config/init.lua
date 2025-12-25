@@ -56,9 +56,7 @@ vim.api.nvim_set_keymap(
   '<cmd>lua vim.lsp.buf.format({ async = true })<CR>',
   { noremap = true, silent = false }
 )
-vim.keymap.set("n", "<C-,>", vim.diagnostic.open_float, opts)
-
-
+vim.keymap.set("n", "gl", vim.diagnostic.open_float, opts)
 
 -- vim: ts=2 sts=2 sw=2 et
 --
