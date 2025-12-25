@@ -26,6 +26,7 @@ local servers = {
     }
   },
 
+  hls = {},
   -- Nix LSP
   nil_ls = {
     settings = {

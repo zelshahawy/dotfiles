@@ -20,7 +20,7 @@ in
         $HOME/.cargo/bin
         /run/current-system/sw/bin
         $HOME/.local/bin
-        $HOME/.cabal/bin
+        $HOME/.cabal
         $HOME/.ghcup/bin
       )
 
