@@ -20,7 +20,10 @@ in
         $HOME/.cargo/bin
         /run/current-system/sw/bin
         $HOME/.local/bin
+        $HOME/.cabal/bin
+        $HOME/.ghcup/bin
       )
+
       prompt_context(){}
 
       eval "$(starship init zsh)"
