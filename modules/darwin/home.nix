@@ -24,6 +24,7 @@ in
     users.${user} = { pkgs, config, lib, ... }: {
       imports = [
         ../shared/programs
+        ./programs
       ];
       home = {
         enableNixpkgsReleaseCheck = false;

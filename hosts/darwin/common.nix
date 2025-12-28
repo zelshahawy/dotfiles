@@ -38,6 +38,7 @@
     systemPackages = with pkgs;
       [
         sketchybar
+        aerospace
       ];
   };
 
