@@ -25,8 +25,8 @@
         inner.vertical = 10;
         outer.left = 10;
         outer.bottom = 10;
-        outer.top = [{ monitor.main = 10; } { monitor.secondary = 48; } 10];
         outer.right = 10;
+        outer.top = 40;
       };
 
       mode.main.binding = {
