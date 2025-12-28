@@ -37,8 +37,6 @@
     enableAllTerminfo = true;
     systemPackages = with pkgs;
       [
-        yabai
-        skhd
         sketchybar
       ];
   };
