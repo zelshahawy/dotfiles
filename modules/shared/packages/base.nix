@@ -1,3 +1,4 @@
+# base-packages.nix
 # Base packages for all systems and users
 { pkgs }:
 
@@ -17,6 +18,13 @@ with pkgs; let
     ps.ruff
     ps.matplotlib
   ]);
+  ghcSet = haskell.packages.ghc96;
+
+  myHaskell = ghcSet.ghcWithPackages (hs: [
+    hs.hoogle
+  ]);
+
+  myHls = haskell-language-server.override { supportedGhcVersions = [ "96" ]; };
 in
 [
   # Core terminal and development tools
@@ -45,8 +53,18 @@ in
   # Python
   myPython
 
+  # Haskell
+  myHaskell
+  cabal-install
+  myHls
+
   # Core development
   nodejs
   rustup
   pixi
 ]
+
+
+
+
+
