@@ -70,7 +70,6 @@
     bash.enable = true;
 
     nix-index.enable = true;
-    _1password-gui.enable = true;
   };
 
   # The platform the configuration will be used on.
