@@ -34,7 +34,7 @@
       "tailscale-app"
       "arc"
       "kiro"
-      "1password"
+      "rstudio"
     ];
   };
 }
