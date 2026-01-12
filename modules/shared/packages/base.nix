@@ -36,7 +36,6 @@ in
   dos2unix
   ncdu
   xcp
-  rWrapper
 
   # Build tools
   autoconf
