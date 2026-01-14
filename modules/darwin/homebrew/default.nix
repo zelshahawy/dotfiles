@@ -35,6 +35,7 @@
       "arc"
       "kiro"
       "rstudio"
+      "dash"
     ];
   };
 }
