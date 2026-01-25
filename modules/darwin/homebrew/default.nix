@@ -28,14 +28,12 @@
       "shottr"
       "slack"
       "zoom"
-      "livewallpaper"
       "obsidian"
       "docker-desktop"
       "tailscale-app"
       "arc"
       "kiro"
       "rstudio"
-      "dash"
     ];
   };
 }
