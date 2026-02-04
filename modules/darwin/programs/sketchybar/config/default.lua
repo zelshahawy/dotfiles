@@ -4,11 +4,11 @@ local colors = require("colors")
 -- Equivalent to the --default domain
 sbar.default({
   updates = "when_shown",
-  icon = {
+   icon = {
     font = {
-      family = settings.font.text,
-      style = settings.font.style_map["Bold"],
-      size = 14.0
+      family = "sketchybar-app-font",
+      style = "Regular",
+      size = 16.0
     },
     color = colors.white,
     padding_left = settings.paddings,

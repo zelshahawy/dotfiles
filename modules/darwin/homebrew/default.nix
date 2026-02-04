@@ -34,6 +34,7 @@
       "arc"
       "kiro"
       "rstudio"
+      "font-sketchybar-app-font"
     ];
   };
 }
