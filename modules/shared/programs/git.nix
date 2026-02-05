@@ -3,6 +3,7 @@
   programs.git = {
     enable = true;
     delta.enable = true;
+    maintenance.enable = true;
     ignores = [ "*.swp" ".DS_STORE" ];
     userName = "Ziad Elshahawy";
     userEmail = "ziadelshahawygit@gmail.com ";
