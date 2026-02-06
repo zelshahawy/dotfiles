@@ -13,9 +13,12 @@ in
       (builtins.fromTOML (builtins.readFile "${catppuccin-starship}/themes/${theme}.toml"))
       // {
         palette = "catppuccin_${theme}";
-        username = { disabled = true; };
-        hostname = { disabled = true; };
+        username = {
+          disabled = true;
+        };
+        hostname = {
+          disabled = true;
+        };
       };
   };
 }
-

@@ -1,4 +1,5 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
   imports = [
     ../../modules/darwin
   ];
@@ -35,11 +36,10 @@
 
   environment = {
     enableAllTerminfo = true;
-    systemPackages = with pkgs;
-      [
-        sketchybar
-        aerospace
-      ];
+    systemPackages = with pkgs; [
+      sketchybar
+      aerospace
+    ];
   };
 
   fonts.packages = with pkgs.nerd-fonts; [
@@ -76,4 +76,3 @@
   nixpkgs.hostPlatform = "aarch64-darwin";
   nixpkgs.config.allowUnfree = true;
 }
-

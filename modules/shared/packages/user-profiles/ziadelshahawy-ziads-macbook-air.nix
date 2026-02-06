@@ -6,7 +6,10 @@ let
   development-packages = import ../development.nix { inherit pkgs; };
   media-packages = import ../media.nix { inherit pkgs; };
 in
-base-packages ++ development-packages ++ media-packages ++ [
+base-packages
+++ development-packages
+++ media-packages
+++ [
   #pkgs.claude-code
   pkgs.nmap
 ]

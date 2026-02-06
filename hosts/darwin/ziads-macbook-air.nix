@@ -1,4 +1,5 @@
-{ hostname, ... }: {
+{ hostname, ... }:
+{
   networking.computerName = "Ziad's MacBook Air";
   networking.hostName = hostname;
 
@@ -8,4 +9,3 @@
   };
 
 }
-
