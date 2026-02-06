@@ -1,0 +1,7 @@
+[formatter.alejandra]
+command = "alejandra"
+includes = ["*.nix"]
+
+[formatter.stylua]
+command = "stylua"
+includes = ["*.lua"]

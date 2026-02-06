@@ -1,0 +1,27 @@
+name: Formatting
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  fmt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v12
+
+      - name: Nix cache
+        uses: DeterminateSystems/magic-nix-cache-action@v7
+
+      - name: Run nix fmt and ensure no diff
+        run: |
+          nix fmt
+          git diff --exit-code
+
+      - name: Flake checks (includes formatting check)
+        run: |
+          nix flake check -L
+
