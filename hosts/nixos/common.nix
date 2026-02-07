@@ -1,5 +1,6 @@
 # Common NixOS configuration
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   imports = [
     ../../modules/nixos
   ];
@@ -13,7 +14,10 @@
 
   nix = {
     settings = {
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       trusted-users = [ "ziadelshahawy" ];
     };
     package = pkgs.nixVersions.stable;

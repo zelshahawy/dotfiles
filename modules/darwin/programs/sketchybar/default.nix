@@ -19,6 +19,9 @@ in
       recursive = true;
     };
     configType = "lua";
-    extraPackages = [ pkgs.gnumake pkgs.aerospace ];
+    extraPackages = [
+      pkgs.gnumake
+      pkgs.aerospace
+    ];
   };
 }

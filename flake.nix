@@ -19,10 +19,24 @@
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
   };
 
-  outputs = { self, nix-darwin, nix-homebrew, home-manager, nixpkgs, mac-app-util, ... }@inputs:
+  outputs =
+    {
+      self,
+      nix-darwin,
+      nix-homebrew,
+      home-manager,
+      nixpkgs,
+      mac-app-util,
+      ...
+    }@inputs:
     let
       # Common system builder function for Darwin
-      mkDarwinSystem = { hostname, system ? "aarch64-darwin", extraModules ? [ ] }:
+      mkDarwinSystem =
+        {
+          hostname,
+          system ? "aarch64-darwin",
+          extraModules ? [ ],
+        }:
         nix-darwin.lib.darwinSystem {
           inherit system;
           modules = [
@@ -44,19 +58,26 @@
             }
             ./hosts/darwin/common.nix
             ./hosts/darwin/${hostname}.nix
-          ] ++ extraModules;
+          ]
+          ++ extraModules;
           specialArgs = { inherit inputs hostname; };
         };
 
       # Common system builder function for NixOS
-      mkNixosSystem = { hostname, system ? "x86_64-linux", extraModules ? [ ] }:
+      mkNixosSystem =
+        {
+          hostname,
+          system ? "x86_64-linux",
+          extraModules ? [ ],
+        }:
         nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
             home-manager.nixosModules.home-manager
             ./hosts/nixos/common.nix
             ./hosts/nixos/${hostname}.nix
-          ] ++ extraModules;
+          ]
+          ++ extraModules;
           specialArgs = { inherit inputs hostname; };
         };
     in

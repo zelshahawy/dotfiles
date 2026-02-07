@@ -47,8 +47,14 @@
         alt-ctrl-j = "focus-monitor down";
 
         # Move window to monitor
-        alt-ctrl-shift-k = [ "move-node-to-monitor up" "focus-monitor up" ];
-        alt-ctrl-shift-j = [ "move-node-to-monitor down" "focus-monitor down" ];
+        alt-ctrl-shift-k = [
+          "move-node-to-monitor up"
+          "focus-monitor up"
+        ];
+        alt-ctrl-shift-j = [
+          "move-node-to-monitor down"
+          "focus-monitor down"
+        ];
 
         # Rotate tree
         alt-r = "layout tiles horizontal vertical";
@@ -66,15 +72,51 @@
         alt-shift-0 = "balance-sizes";
 
         # Move window to workspace and focus
-        alt-shift-1 = [ "move-node-to-workspace 1" "workspace 1" "exec-and-forget sketchybar --trigger windows_on_spaces" ];
-        alt-shift-2 = [ "move-node-to-workspace 2" "workspace 2" "exec-and-forget sketchybar --trigger windows_on_spaces" ];
-        alt-shift-3 = [ "move-node-to-workspace 3" "workspace 3" "exec-and-forget sketchybar --trigger windows_on_spaces" ];
-        alt-shift-4 = [ "move-node-to-workspace 4" "workspace 4" "exec-and-forget sketchybar --trigger windows_on_spaces" ];
-        alt-shift-5 = [ "move-node-to-workspace 5" "workspace 5" "exec-and-forget sketchybar --trigger windows_on_spaces" ];
-        alt-shift-6 = [ "move-node-to-workspace 6" "workspace 6" "exec-and-forget sketchybar --trigger windows_on_spaces" ];
-        alt-shift-7 = [ "move-node-to-workspace 7" "workspace 7" "exec-and-forget sketchybar --trigger windows_on_spaces" ];
-        alt-shift-8 = [ "move-node-to-workspace 8" "workspace 8" "exec-and-forget sketchybar --trigger windows_on_spaces" ];
-        alt-shift-9 = [ "move-node-to-workspace 9" "workspace 9" "exec-and-forget sketchybar --trigger windows_on_spaces" ];
+        alt-shift-1 = [
+          "move-node-to-workspace 1"
+          "workspace 1"
+          "exec-and-forget sketchybar --trigger windows_on_spaces"
+        ];
+        alt-shift-2 = [
+          "move-node-to-workspace 2"
+          "workspace 2"
+          "exec-and-forget sketchybar --trigger windows_on_spaces"
+        ];
+        alt-shift-3 = [
+          "move-node-to-workspace 3"
+          "workspace 3"
+          "exec-and-forget sketchybar --trigger windows_on_spaces"
+        ];
+        alt-shift-4 = [
+          "move-node-to-workspace 4"
+          "workspace 4"
+          "exec-and-forget sketchybar --trigger windows_on_spaces"
+        ];
+        alt-shift-5 = [
+          "move-node-to-workspace 5"
+          "workspace 5"
+          "exec-and-forget sketchybar --trigger windows_on_spaces"
+        ];
+        alt-shift-6 = [
+          "move-node-to-workspace 6"
+          "workspace 6"
+          "exec-and-forget sketchybar --trigger windows_on_spaces"
+        ];
+        alt-shift-7 = [
+          "move-node-to-workspace 7"
+          "workspace 7"
+          "exec-and-forget sketchybar --trigger windows_on_spaces"
+        ];
+        alt-shift-8 = [
+          "move-node-to-workspace 8"
+          "workspace 8"
+          "exec-and-forget sketchybar --trigger windows_on_spaces"
+        ];
+        alt-shift-9 = [
+          "move-node-to-workspace 9"
+          "workspace 9"
+          "exec-and-forget sketchybar --trigger windows_on_spaces"
+        ];
 
         # Focus workspace
         alt-tab = "workspace-back-and-forth";
@@ -94,9 +136,18 @@
       };
 
       mode.service.binding = {
-        esc = [ "reload-config" "mode main" ];
-        r = [ "flatten-workspace-tree" "mode main" ];
-        backspace = [ "close-all-windows-but-current" "mode main" ];
+        esc = [
+          "reload-config"
+          "mode main"
+        ];
+        r = [
+          "flatten-workspace-tree"
+          "mode main"
+        ];
+        backspace = [
+          "close-all-windows-but-current"
+          "mode main"
+        ];
       };
 
       # App-specific rules

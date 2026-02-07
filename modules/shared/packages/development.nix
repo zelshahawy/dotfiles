@@ -1,7 +1,8 @@
 # Development packages that can be enabled per system
 { pkgs }:
 
-with pkgs; [
+with pkgs;
+[
   # Advanced development tools
   # android-tools
   # google-cloud-sdk

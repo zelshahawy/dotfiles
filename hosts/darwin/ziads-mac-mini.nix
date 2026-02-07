@@ -1,4 +1,5 @@
-{ hostname, ... }: {
+{ hostname, ... }:
+{
   # MacBook Pro specific configuration
   networking.computerName = "Ziad's Mac Mini";
   networking.hostName = hostname;
@@ -9,4 +10,3 @@
     stateVersion = 5;
   };
 }
-

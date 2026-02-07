@@ -2,7 +2,8 @@
 # Base packages for all systems and users
 { pkgs }:
 
-with pkgs; let
+with pkgs;
+let
   myPython = python313.withPackages (ps: [
     ps.distutils
     ps.flit
@@ -63,8 +64,3 @@ in
   rustup
   pixi
 ]
-
-
-
-
-

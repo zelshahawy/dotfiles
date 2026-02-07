@@ -14,7 +14,7 @@ in
     initContent = ''
       source ${catppuccin-zsh-syntax-highlighting}/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
       eval $(opam env)
-      
+
       path+=(
         $HOME/go/bin
         $HOME/.cargo/bin
@@ -56,15 +56,27 @@ in
       gds = "git diff --staged";
       gl = "git log --oneline --graph --decorate --all";
       cat = "bat --paging=never --style=header,grid";
-    } // (
-      let servers = [ "ra" "amun" "set" "anubis" "seshat" "hathor" "thoth" "maat" "sekhmet" ];
+    }
+    // (
+      let
+        servers = [
+          "ra"
+          "amun"
+          "set"
+          "anubis"
+          "seshat"
+          "hathor"
+          "thoth"
+          "maat"
+          "sekhmet"
+        ];
       in
-      builtins.listToAttrs (map
-        (server: {
+      builtins.listToAttrs (
+        map (server: {
           name = server;
           value = "ssh zelshahawy@${server}.cs.uchicago.edu";
-        })
-        servers)
+        }) servers
+      )
     );
     plugins = [
       {

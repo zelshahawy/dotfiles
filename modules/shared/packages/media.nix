@@ -1,7 +1,8 @@
 # Media and graphics packages
 { pkgs }:
 
-with pkgs; [
+with pkgs;
+[
   # Graphics and media libraries
   cairo
   adwaita-icon-theme
