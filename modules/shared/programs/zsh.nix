@@ -28,11 +28,9 @@ in
 
       eval "$(starship init zsh)"
 
-
-      if [[ -z "$TMUX" && $- == *i* && "$TERM_PROGRAM" != "vscode" ]]; then
+      if [[ -z "$TMUX" && $- == *i* && "$TERM_PROGRAM" == "ghostty" ]]; then
         exec tmux new-session -A -s main
       fi
-
     '';
     shellAliases = {
       cp = "xcp";
@@ -72,10 +70,12 @@ in
         ];
       in
       builtins.listToAttrs (
-        map (server: {
-          name = server;
-          value = "ssh zelshahawy@${server}.cs.uchicago.edu";
-        }) servers
+        map
+          (server: {
+            name = server;
+            value = "ssh zelshahawy@${server}.cs.uchicago.edu";
+          })
+          servers
       )
     );
     plugins = [
