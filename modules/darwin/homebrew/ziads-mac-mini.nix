@@ -11,7 +11,7 @@
       "google-chrome"
       "virtualbox"
       "microsoft-teams"
-      "orbstack"
+      "docker-desktop"
     ];
   };
 }

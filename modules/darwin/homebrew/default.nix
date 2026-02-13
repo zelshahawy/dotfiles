@@ -32,6 +32,7 @@
       "kiro"
       "rstudio"
       "font-sketchybar-app-font"
+      "orbstack"
     ];
   };
 }
