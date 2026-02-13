@@ -8,5 +8,4 @@ with pkgs;
   raycast
   skimpdf
   maccy
-  orbstack
 ]

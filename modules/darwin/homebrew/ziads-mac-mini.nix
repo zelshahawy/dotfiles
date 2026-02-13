@@ -11,6 +11,7 @@
       "google-chrome"
       "virtualbox"
       "microsoft-teams"
+      "orbstack"
     ];
   };
 }
