@@ -33,6 +33,7 @@
       "rstudio"
       "font-sketchybar-app-font"
       "orbstack"
+      "blender"
     ];
   };
 }
