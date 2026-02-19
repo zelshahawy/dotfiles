@@ -70,12 +70,10 @@ in
         ];
       in
       builtins.listToAttrs (
-        map
-          (server: {
-            name = server;
-            value = "ssh zelshahawy@${server}.cs.uchicago.edu";
-          })
-          servers
+        map (server: {
+          name = server;
+          value = "ssh zelshahawy@${server}.cs.uchicago.edu";
+        }) servers
       )
     );
     plugins = [
