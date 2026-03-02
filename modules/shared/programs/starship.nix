@@ -14,13 +14,17 @@ in
       // {
         palette = "catppuccin_${theme}";
         add_newline = true;
-        format = "$hostname$directory$git_branch$git_status$line_break$character";
+        format = "$hostname $directory $git_branch$git_status$line_break$character";
 
         hostname = {
           disabled = false;
           ssh_only = false;
           style = "bold green";
-          format = "[$hostname@]($style)";
+          format = "[$hostname]($style)";
+        };
+
+        directory = {
+          format = "[@$path]($style)";
         };
 
         line_break = {
