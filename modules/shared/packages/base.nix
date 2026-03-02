@@ -37,6 +37,7 @@ in
   dos2unix
   ncdu
   xcp
+  pandoc
 
   # Build tools
   autoconf
