@@ -1,4 +1,10 @@
-{ config, pkgs, hostName, lib, ... }:
+{
+  config,
+  pkgs,
+  hostName,
+  lib,
+  ...
+}:
 {
   imports = [
     ../../modules/darwin
