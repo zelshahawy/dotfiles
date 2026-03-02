@@ -20,25 +20,25 @@
   };
 
   outputs =
-    { self
-    , nix-darwin
-    , nix-homebrew
-    , home-manager
-    , nixpkgs
-    , mac-app-util
-    , ...
+    {
+      self,
+      nix-darwin,
+      nix-homebrew,
+      home-manager,
+      nixpkgs,
+      mac-app-util,
+      ...
     }@inputs:
     let
       # Common system builder function for Darwin
       mkDarwinSystem =
         {
           # Actual hostname (what shows in terminal, hostname, etc.)
-          hostName
-        , # Which host module file to import (stable name like macbook-air/mac-mini)
-          hostConfig ? hostName
-        , system ? "aarch64-darwin"
-        , extraModules ? [ ]
-        ,
+          hostName,
+          # Which host module file to import (stable name like macbook-air/mac-mini)
+          hostConfig ? hostName,
+          system ? "aarch64-darwin",
+          extraModules ? [ ],
         }:
         nix-darwin.lib.darwinSystem {
           inherit system;
@@ -64,7 +64,8 @@
 
             ./hosts/darwin/common.nix
             ./hosts/darwin/${hostConfig}.nix
-          ] ++ extraModules;
+          ]
+          ++ extraModules;
 
           # Pass both through so you can use them in modules if you want
           specialArgs = {
@@ -75,10 +76,10 @@
 
       # Common system builder function for NixOS
       mkNixosSystem =
-        { hostname
-        , system ? "x86_64-linux"
-        , extraModules ? [ ]
-        ,
+        {
+          hostname,
+          system ? "x86_64-linux",
+          extraModules ? [ ],
         }:
         nixpkgs.lib.nixosSystem {
           inherit system;
