@@ -34,6 +34,7 @@
       "font-sketchybar-app-font"
       "orbstack"
       "blender"
+      "free-download-manager"
     ];
   };
 }
