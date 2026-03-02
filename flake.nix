@@ -98,7 +98,7 @@
       darwinConfigurations = {
         "macbook-air" = mkDarwinSystem {
           hostConfig = "ziads-macbook-air"; # loads ./hosts/darwin/macbook-air.nix
-          hostName = "Strike-Freedom"; # actual hostname
+          hostName = "Wing-Zero"; # actual hostname
           system = "aarch64-darwin";
         };
 
