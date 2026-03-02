@@ -20,25 +20,29 @@
   };
 
   outputs =
-    {
-      self,
-      nix-darwin,
-      nix-homebrew,
-      home-manager,
-      nixpkgs,
-      mac-app-util,
-      ...
+    { self
+    , nix-darwin
+    , nix-homebrew
+    , home-manager
+    , nixpkgs
+    , mac-app-util
+    , ...
     }@inputs:
     let
       # Common system builder function for Darwin
       mkDarwinSystem =
         {
-          hostname,
-          system ? "aarch64-darwin",
-          extraModules ? [ ],
+          # Actual hostname (what shows in terminal, hostname, etc.)
+          hostName
+        , # Which host module file to import (stable name like macbook-air/mac-mini)
+          hostConfig ? hostName
+        , system ? "aarch64-darwin"
+        , extraModules ? [ ]
+        ,
         }:
         nix-darwin.lib.darwinSystem {
           inherit system;
+
           modules = [
             mac-app-util.darwinModules.default
             home-manager.darwinModules.home-manager
@@ -47,6 +51,7 @@
                 mac-app-util.homeManagerModules.default
               ];
             }
+
             nix-homebrew.darwinModules.nix-homebrew
             {
               nix-homebrew = {
@@ -56,19 +61,24 @@
                 autoMigrate = true;
               };
             }
+
             ./hosts/darwin/common.nix
-            ./hosts/darwin/${hostname}.nix
-          ]
-          ++ extraModules;
-          specialArgs = { inherit inputs hostname; };
+            ./hosts/darwin/${hostConfig}.nix
+          ] ++ extraModules;
+
+          # Pass both through so you can use them in modules if you want
+          specialArgs = {
+            inherit inputs hostName hostConfig;
+            hostname = hostConfig; # compatibility for modules expecting `hostname`
+          };
         };
 
       # Common system builder function for NixOS
       mkNixosSystem =
-        {
-          hostname,
-          system ? "x86_64-linux",
-          extraModules ? [ ],
+        { hostname
+        , system ? "x86_64-linux"
+        , extraModules ? [ ]
+        ,
         }:
         nixpkgs.lib.nixosSystem {
           inherit system;
@@ -84,14 +94,17 @@
     {
       # Build darwin flake using:
       # $ darwin-rebuild build --flake .#macbook-air
-      # $ darwin-rebuild build --flake .#macbook-pro
+      # $ darwin-rebuild build --flake .#mac-mini
       darwinConfigurations = {
         "macbook-air" = mkDarwinSystem {
-          hostname = "ziads-macbook-air";
+          hostConfig = "ziads-macbook-air"; # loads ./hosts/darwin/macbook-air.nix
+          hostName = "Strike-Freedom"; # actual hostname
           system = "aarch64-darwin";
         };
+
         "mac-mini" = mkDarwinSystem {
-          hostname = "ziads-mac-mini";
+          hostConfig = "ziads-mac-mini"; # loads ./hosts/darwin/mac-mini.nix
+          hostName = "Destiny"; # actual hostname
           system = "aarch64-darwin";
         };
       };

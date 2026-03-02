@@ -1,8 +1,16 @@
-{ config, pkgs, ... }:
+{ config, pkgs, hostName, lib, ... }:
 {
   imports = [
     ../../modules/darwin
   ];
+
+  networking.hostName = lib.mkForce hostName;
+
+  system.activationScripts.setHostName.text = ''
+    /usr/sbin/scutil --set HostName "${hostName}"
+    /usr/sbin/scutil --set LocalHostName "${hostName}"
+    /usr/sbin/scutil --set ComputerName "${hostName}"
+  '';
 
   system = {
     primaryUser = "ziadelshahawy";

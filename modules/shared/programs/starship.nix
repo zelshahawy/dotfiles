@@ -13,11 +13,18 @@ in
       (builtins.fromTOML (builtins.readFile "${catppuccin-starship}/themes/${theme}.toml"))
       // {
         palette = "catppuccin_${theme}";
-        username = {
-          disabled = true;
-        };
+        add_newline = true;
+        format = "$hostname$directory$git_branch$git_status$line_break$character";
+
         hostname = {
-          disabled = true;
+          disabled = false;
+          ssh_only = false;
+          style = "bold green";
+          format = "[$hostname@]($style)";
+        };
+
+        line_break = {
+          disabled = false;
         };
       };
   };
