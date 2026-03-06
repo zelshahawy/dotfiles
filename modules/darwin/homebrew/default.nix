@@ -35,6 +35,7 @@
       "orbstack"
       "blender"
       "free-download-manager"
+      "basictex"
     ];
   };
 }
