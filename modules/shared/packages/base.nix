@@ -54,6 +54,7 @@ in
 
   # Python
   myPython
+  pyright
 
   # Haskell
   myHaskell
