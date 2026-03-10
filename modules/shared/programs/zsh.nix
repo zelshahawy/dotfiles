@@ -22,6 +22,7 @@ in
         $HOME/.local/bin
         $HOME/.cabal
         $HOME/.ghcup/bin
+        /Library/TeX/texbin # for pdflatex
       )
 
       prompt_context(){}
@@ -70,10 +71,12 @@ in
         ];
       in
       builtins.listToAttrs (
-        map (server: {
-          name = server;
-          value = "ssh zelshahawy@${server}.cs.uchicago.edu";
-        }) servers
+        map
+          (server: {
+            name = server;
+            value = "ssh zelshahawy@${server}.cs.uchicago.edu";
+          })
+          servers
       )
     );
     plugins = [
