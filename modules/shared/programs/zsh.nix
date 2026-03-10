@@ -55,6 +55,7 @@ in
       gds = "git diff --staged";
       gl = "git log --oneline --graph --decorate --all";
       cat = "bat --paging=never --style=header,grid";
+      grep = "rg";
     }
     // (
       let
