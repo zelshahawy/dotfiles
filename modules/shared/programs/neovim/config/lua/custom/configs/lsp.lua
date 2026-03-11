@@ -14,18 +14,45 @@ local servers = {
 	-- Ansible LSP
 
 	-- Python LSP with additional plugins
-	ruff = {},
-
-	basedpyright = {
+  basedpyright = {
 		settings = {
-			analysis = {
-				inlayHints = {
-					callArgumentNames = false,
+			basedpyright = {
+				analysis = {
+					inlayHints = {
+						callArgumentNames = false,
+					},
 				},
 			},
 		},
 	},
 
+  -- Lua LSP
+  lua_ls = {
+    settings = {
+      Lua = {
+        runtime = {
+          version = "LuaJIT",
+        },
+        diagnostics = {
+          globals = { "vim" },
+        },
+        workspace = {
+          checkThirdParty = false,
+          library = {
+            vim.env.VIMRUNTIME,
+          },
+        },
+        completion = {
+          callSnippet = "Replace",
+        },
+        telemetry = {
+          enable = false,
+        },
+      },
+    },
+  },
+
+  -- Haskell
 	hls = {},
 	-- Nix LSP
 	nil_ls = {
@@ -44,6 +71,25 @@ local servers = {
 	},
 
 	-- Rust LSP
+  rust_analyzer = {
+    settings = {
+      ["rust-analyzer"] = {
+        cargo = {
+          allTargets = true,
+          buildScripts = {
+            enable = true,
+          },
+        },
+        procMacro = {
+          enable = true,
+        },
+        checkOnSave = true,
+        check = {
+          command = "clippy",
+        },
+      },
+    },
+  },
 }
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
