@@ -3,28 +3,30 @@
 local on_attach = require("custom.util.lspconfig").on_attach
 
 local servers = {
-	-- C/C++ LSP
-	clangd = {},
+  -- C/C++ LSP
+  clangd = {},
 
-	-- Go LSP
-	gopls = {},
+  -- Go LSP
+  gopls = {},
 
-	-- TypeScript/JavaScript LSP
+  -- TypeScript/JavaScript LSP
 
-	-- Ansible LSP
+  -- Ansible LSP
 
-	-- Python LSP with additional plugins
+  -- Python LSP with additional plugins
   basedpyright = {
-		settings = {
-			basedpyright = {
-				analysis = {
-					inlayHints = {
-						callArgumentNames = false,
-					},
-				},
-			},
-		},
-	},
+    settings = {
+      basedpyright = {
+        analysis = {
+          inlayHints = {
+            callArgumentNames = false,
+          },
+        },
+      },
+    },
+  },
+
+  ruff = {}, -- For formatting
 
   -- Lua LSP
   lua_ls = {
@@ -53,61 +55,42 @@ local servers = {
   },
 
   -- Haskell
-	hls = {},
-	-- Nix LSP
-	nil_ls = {
-		settings = {
-			["nil"] = {
-				formatting = {
-					command = { "nixpkgs-fmt" },
-				},
-				nix = {
-					flake = {
-						autoArchive = true,
-					},
-				},
-			},
-		},
-	},
-
-	-- Rust LSP
-  rust_analyzer = {
+  hls = {},
+  -- Nix LSP
+  nil_ls = {
     settings = {
-      ["rust-analyzer"] = {
-        cargo = {
-          allTargets = true,
-          buildScripts = {
-            enable = true,
+      ["nil"] = {
+        formatting = {
+          command = { "nixpkgs-fmt" },
+        },
+        nix = {
+          flake = {
+            autoArchive = true,
           },
-        },
-        procMacro = {
-          enable = true,
-        },
-        checkOnSave = true,
-        check = {
-          command = "clippy",
         },
       },
     },
   },
+
+  -- Rust LSP already configured
 }
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local function merge(a, b)
-	return vim.tbl_deep_extend("force", a or {}, b or {})
+  return vim.tbl_deep_extend("force", a or {}, b or {})
 end
 
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 -- Set up each server
 for name, opts in pairs(servers) do
-	local base = {
-		on_attach = on_attach,
-		capabilities = capabilities,
-	}
-	vim.lsp.config(name, merge(base, opts))
+  local base = {
+    on_attach = on_attach,
+    capabilities = capabilities,
+  }
+  vim.lsp.config(name, merge(base, opts))
 end
 
 vim.lsp.enable(vim.tbl_keys(servers))

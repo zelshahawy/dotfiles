@@ -32,6 +32,10 @@ in
       if [[ -z "$TMUX" && $- == *i* && "$TERM_PROGRAM" == "ghostty" ]]; then
         exec tmux new-session -A -s main
       fi
+
+      ccc() {
+        pbcopy < "$1"
+      }
     '';
     shellAliases = {
       cp = "xcp";
