@@ -65,4 +65,8 @@ in
   nodejs
   rustup
   pixi
+
+  # Markdown
+  markdown-oxide
+  marksman
 ]

@@ -9,8 +9,8 @@ return {
 	cmd = { "Neotree" },
 	keys = {
 		{ "<C-n>", "<cmd>Neotree toggle<cr>", desc = "Toggle neotree" },
-		{ "<C-e>", "<cmd>Neotree focus<cr>", desc = "Focus neotree" },
-		{ "\\", "<cmd>Neotree reveal<cr>", desc = "Reveal neotree" },
+		{ "<C-e>", "<cmd>Neotree focus<cr>",  desc = "Focus neotree" },
+		{ "\\",    "<cmd>Neotree reveal<cr>", desc = "Reveal neotree" },
 	},
 	opts = {
 		close_if_last_window = true,
@@ -37,8 +37,9 @@ return {
 				-- },
 			},
 			-- other diagnostic prefs you like:
-			-- virtual_text = false,
-			-- underline = true,
+			virtual_text = true,
+			underline = true,
+			severity_sort = true,
 			-- update_in_insert = false,
 		})
 
