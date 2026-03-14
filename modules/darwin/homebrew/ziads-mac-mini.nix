@@ -11,7 +11,6 @@
       "google-chrome"
       "virtualbox"
       "microsoft-teams"
-      "docker-desktop"
     ];
   };
 }
