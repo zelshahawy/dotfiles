@@ -1,6 +1,6 @@
 return {
 	"mrcjkb/rustaceanvim",
-	version = "^4", -- Recommended
+	version = "^8", -- Recommended
 	ft = { "rust" },
 	config = function()
 		vim.g.rustaceanvim = {
