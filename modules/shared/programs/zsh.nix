@@ -61,7 +61,6 @@ in
       cat = "bat --paging=never --style=header,grid";
       grep = "rg";
 
-
       # Homelab
       destiny = "ssh ziadelshahawy@ziads-mac-mini-1";
       wing-zero = "ssh ziadelshahawy@ziads-macbook-air";
@@ -81,12 +80,10 @@ in
         ];
       in
       builtins.listToAttrs (
-        map
-          (server: {
-            name = server;
-            value = "ssh zelshahawy@${server}.cs.uchicago.edu";
-          })
-          servers
+        map (server: {
+          name = server;
+          value = "ssh zelshahawy@${server}.cs.uchicago.edu";
+        }) servers
       )
     );
     plugins = [
