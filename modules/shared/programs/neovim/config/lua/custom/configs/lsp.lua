@@ -72,6 +72,8 @@ local servers = {
     },
   },
 
+  ts_ls = {}, -- for typescript
+
   -- Rust LSP already configured
 
   -- Markdown

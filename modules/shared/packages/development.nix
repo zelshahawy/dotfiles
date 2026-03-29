@@ -23,7 +23,9 @@ with pkgs;
   typst
   tinymist # typst
   millet # SML
-  nixpkgs-fmt
+  nixpkgs-fmt #for nix
+  typescript-language-server # for typescript, tx
+
 
   # Specialized tools
   # elan
