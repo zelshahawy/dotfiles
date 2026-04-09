@@ -10,7 +10,6 @@
       "spotify"
       "google-chrome"
       "virtualbox"
-      "microsoft-teams"
     ];
   };
 }

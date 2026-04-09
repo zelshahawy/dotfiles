@@ -34,6 +34,8 @@
       "orbstack"
       "free-download-manager"
       "basictex"
+      "microsoft-teams"
+
     ];
   };
 }
