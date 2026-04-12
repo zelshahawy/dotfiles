@@ -1,9 +1,8 @@
-{
-  config,
-  pkgs,
-  hostName,
-  lib,
-  ...
+{ config
+, pkgs
+, hostName
+, lib
+, ...
 }:
 {
   imports = [
@@ -54,6 +53,11 @@
       sketchybar
       aerospace
     ];
+    etc."pam.d/sudo_local".text = ''
+      # Managed by Nix Darwin
+      auth       optional       ${pkgs.pam-reattach}/lib/pam/pam_reattach.so ignore_ssh
+      auth       sufficient     pam_tid.so
+    '';
   };
 
   fonts.packages = with pkgs.nerd-fonts; [
