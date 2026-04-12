@@ -108,6 +108,11 @@
           hostName = "Destiny"; # actual hostname
           system = "aarch64-darwin";
         };
+	"mac-pro" = mkDarwinSystem {
+	  hostConfig = "ziads-macBook-pro";
+	  hostName = "Unicorn";
+	  system = "aarch64-darwin";
+	};
       };
 
       # Build nixos flake using:
