@@ -35,7 +35,7 @@
       "free-download-manager"
       "basictex"
       "microsoft-teams"
-
+      "jordanbaird-ice"
     ];
   };
 }
