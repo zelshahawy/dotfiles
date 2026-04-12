@@ -109,7 +109,7 @@
           system = "aarch64-darwin";
         };
 	"mac-pro" = mkDarwinSystem {
-	  hostConfig = "ziads-macBook-pro";
+	  hostConfig = "ziads-macbook-pro";
 	  hostName = "Unicorn";
 	  system = "aarch64-darwin";
 	};
