@@ -1,13 +1,20 @@
+vim.filetype.add({
+  extension = {
+    mdx = 'mdx',
+  },
+})
+vim.treesitter.language.register('markdown', 'mdx')
+
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
 ---@diagnostic disable-next-line: missing-fields
-require("nvim-treesitter.configs").setup({
+require("nvim-treesitter.config").setup({
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { "c", "cpp", "go", "lua", "python", "tsx", "javascript", "typescript", "vimdoc", "vim", "rust", },
+  ensure_installed = { "c", "cpp", "go", "lua", "python", "tsx", "javascript", "typescript", "vimdoc", "vim", "rust", "markdown", "markdown_inline" },
 
   auto_install = true,
 
-  highlight = { enable = true, disable = { "latex" }, additional_vim_regex_highlighting = { "latex", "markdown" } },
+  highlight = { enable = true, disable = { "latex" }, additional_vim_regex_highlighting = { "latex" } },
   indent = { enable = true },
   incremental_selection = {
     enable = true,

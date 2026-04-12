@@ -69,4 +69,7 @@ in
   # Markdown
   markdown-oxide
   marksman
+
+  # C++
+  llvmPackages_22.clang-unwrapped
 ]

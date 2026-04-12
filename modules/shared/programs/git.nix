@@ -1,19 +1,17 @@
 { ... }:
 {
+  programs.delta.enable = true;
+  programs.delta.enableGitIntegration = true;
   programs.git = {
     enable = true;
-    delta.enable = true;
     maintenance.enable = true;
     ignores = [
       "*.swp"
       ".DS_STORE"
     ];
-    userName = "Ziad Elshahawy";
-    userEmail = "ziadelshahawygit@gmail.com ";
-    lfs = {
-      enable = true;
-    };
-    extraConfig = {
+    settings = {
+      user.name = "Ziad Elshahawy";
+      user.email = "ziadelshahawygit@gmail.com";
       init.defaultBranch = "main";
       core = {
         editor = "nvim";
@@ -21,6 +19,10 @@
       };
       pull.rebase = true;
       rebase.autoStash = true;
+
+    };
+    lfs = {
+      enable = true;
     };
   };
 }
