@@ -86,8 +86,6 @@
     # Create /etc/zshrc that loads the nix-darwin environment.
     zsh.enable = true;
     bash.enable = true;
-
-    nix-index.enable = true;
   };
 
   # The platform the configuration will be used on.

@@ -29,13 +29,12 @@ in
 
       eval "$(starship init zsh)"
 
-      if [[ -z "$TMUX" && $- == *i* && "$TERM_PROGRAM" == "ghostty" ]]; then
-        exec tmux new-session -A -s main
-      fi
-
       ccc() {
         pbcopy < "$1"
       }
+      if [[ -z "$TMUX" && $- == *i* && "$TERM_PROGRAM" == "ghostty" ]]; then
+        tmux new-session -A -s main
+      fi
     '';
     shellAliases = {
       cp = "xcp";

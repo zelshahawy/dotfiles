@@ -14,6 +14,7 @@
     # Put packages you want on *every* Mac here
     brews = [
       "libuv"
+      "r"
     ];
 
     casks = [
@@ -35,7 +36,6 @@
       "free-download-manager"
       "basictex"
       "microsoft-teams"
-      "jordanbaird-ice"
     ];
   };
 }

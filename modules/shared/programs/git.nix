@@ -4,6 +4,7 @@
   programs.delta.enableGitIntegration = true;
   programs.git = {
     enable = true;
+    signing.format = "openpgp";
     maintenance.enable = true;
     ignores = [
       "*.swp"

@@ -2,6 +2,7 @@
   description = "System Configuration";
 
   inputs = {
+    nixpkgs-weekly.url = "https://flakehub.com/f/DeterminateSystems/nixpkgs-weekly/0.1.978638";
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
     mac-app-util.url = "github:hraban/mac-app-util";
@@ -17,6 +18,9 @@
     };
 
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
+
+    nix-index-database.url = "github:nix-community/nix-index-database";
+    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -26,6 +30,7 @@
     , home-manager
     , nixpkgs
     , mac-app-util
+    , nix-index-database, nixpkgs-weekly
     , ...
     }@inputs:
     let
@@ -64,6 +69,9 @@
 
             ./hosts/darwin/common.nix
             ./hosts/darwin/${hostConfig}.nix
+
+            nix-index-database.darwinModules.nix-index # for nix index
+            { programs.nix-index-database.comma.enable = true; }
           ]
           ++ extraModules;
 
@@ -108,11 +116,11 @@
           hostName = "Destiny"; # actual hostname
           system = "aarch64-darwin";
         };
-	"mac-pro" = mkDarwinSystem {
-	  hostConfig = "ziads-macbook-pro";
-	  hostName = "Unicorn";
-	  system = "aarch64-darwin";
-	};
+        "mac-pro" = mkDarwinSystem {
+          hostConfig = "ziads-macbook-pro";
+          hostName = "Unicorn";
+          system = "aarch64-darwin";
+        };
       };
 
       # Build nixos flake using:

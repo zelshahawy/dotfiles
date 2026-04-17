@@ -71,5 +71,5 @@ in
   marksman
 
   # C++
-  llvmPackages_22.clang-unwrapped
+  llvmPackages_22.clang-tools
 ]

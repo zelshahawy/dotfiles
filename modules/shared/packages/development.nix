@@ -25,7 +25,7 @@ with pkgs;
   millet # SML
   nixpkgs-fmt #for nix
   typescript-language-server # for typescript, tx
-
+  just-lsp
 
   # Specialized tools
   # elan
@@ -33,6 +33,8 @@ with pkgs;
   lua5_4
   ollama
   opam
+  just
+
   # qemu
   z3
 ]
