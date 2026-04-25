@@ -36,4 +36,8 @@
   programs.zoxide.enable = true;
   programs.uv.enable = true;
   programs.tealdeer.enable = true;
+
+  # AI stuff
+  programs.claude-code.enable = true;
+  programs.opencode.enable = true;
 }

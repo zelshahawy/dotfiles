@@ -40,6 +40,7 @@ in
       {
         imports = [
           ../shared/programs
+          ../shared/services
         ];
         home = {
           enableNixpkgsReleaseCheck = false;

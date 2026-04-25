@@ -42,6 +42,7 @@ in
       {
         imports = [
           ../shared/programs
+          ../shared/services
           ./programs
         ];
         home = {
