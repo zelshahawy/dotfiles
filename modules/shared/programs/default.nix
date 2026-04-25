@@ -39,5 +39,11 @@
 
   # AI stuff
   programs.claude-code.enable = true;
-  programs.opencode.enable = true;
+  programs.opencode = {
+    enable = true;
+    settings = {
+      model = "ollama/qwen2.5:32b";
+      autoupdate = false;
+    };
+  };
 }
