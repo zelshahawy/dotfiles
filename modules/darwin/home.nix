@@ -59,6 +59,7 @@ in
           font-size = 17
           background-blur = 20
           background-opacity = 0.85
+          confirm-close-surface = false
         '';
       };
   };

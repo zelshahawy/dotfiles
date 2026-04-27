@@ -45,5 +45,10 @@
       model = "ollama/qwen2.5:32b";
       autoupdate = false;
     };
+
+    tui = {
+      theme = "tokyonight";
+    };
+
   };
 }
