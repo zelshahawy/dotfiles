@@ -7,6 +7,7 @@
 
     casks = [
       "spotify"
+      "bruno"
     ];
   };
 }

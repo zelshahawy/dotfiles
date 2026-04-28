@@ -27,6 +27,9 @@ with pkgs;
   typescript-language-server # for typescript, tx
   just-lsp
 
+
+  # repl
+
   # Specialized tools
   # elan
   # fstar

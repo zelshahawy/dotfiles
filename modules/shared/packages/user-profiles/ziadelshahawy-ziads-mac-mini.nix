@@ -10,7 +10,6 @@ base-packages
 ++ development-packages
 ++ media-packages
 ++ [
-  pkgs.claude-code
   pkgs.nmap
   pkgs.texliveFull
 ]
