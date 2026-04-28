@@ -62,8 +62,9 @@ in
 
 
       # Homelab
-      destiny = "ssh ziadelshahawy@ziads-mac-mini-1";
-      wing-zero = "ssh ziadelshahawy@ziads-macbook-air";
+      destiny = "ssh ziadelshahawy@destiny";
+      wing-zero = "ssh ziadelshahawy@wing-zero";
+      unicorn = "ssh ziadelshahawy@unicorn";
     }
     // (
       let

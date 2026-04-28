@@ -78,7 +78,6 @@ local servers = {
 
   -- Markdown
   markdown_oxide = {},
-  marksman = {},
 }
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
