@@ -23,10 +23,9 @@ with pkgs;
   typst
   tinymist # typst
   millet # SML
-  nixpkgs-fmt #for nix
+  nixpkgs-fmt # for nix
   typescript-language-server # for typescript, tx
   just-lsp
-
 
   # repl
 
