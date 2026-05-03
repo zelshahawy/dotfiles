@@ -9,7 +9,6 @@
       "xquartz"
       "spotify"
       "google-chrome"
-      "virtualbox"
       "Bruno"
     ];
   };

@@ -154,10 +154,6 @@
       on-window-detected = [
         # App to workspace assignments
         {
-          "if".app-id = "company.thebrowser.Browser";
-          run = "move-node-to-workspace 1";
-        }
-        {
           "if".app-id = "com.github.wez.wezterm";
           run = "move-node-to-workspace 2";
         }
