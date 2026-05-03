@@ -1,6 +1,7 @@
-{ hostname ? "nixos-desktop"
-, pkgs
-, ...
+{
+  hostname ? "nixos-desktop",
+  pkgs,
+  ...
 }:
 let
   fullName = "Ziad Elshahawy";
@@ -32,10 +33,11 @@ in
         ;
     };
     users.${user} =
-      { pkgs
-      , config
-      , lib
-      , ...
+      {
+        pkgs,
+        config,
+        lib,
+        ...
       }:
       {
         imports = [

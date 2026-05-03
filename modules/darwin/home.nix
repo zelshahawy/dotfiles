@@ -1,5 +1,6 @@
-{ hostname ? "ziads-macbook-air"
-, ...
+{
+  hostname ? "ziads-macbook-air",
+  ...
 }:
 let
   fullName = "Ziad Elshahawy";
@@ -34,10 +35,11 @@ in
         ;
     };
     users.${user} =
-      { pkgs
-      , config
-      , lib
-      , ...
+      {
+        pkgs,
+        config,
+        lib,
+        ...
       }:
       {
         imports = [
