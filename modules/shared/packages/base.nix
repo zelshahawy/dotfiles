@@ -69,5 +69,6 @@ in
   # Markdown
   markdown-oxide
   # C++
-  llvmPackages_22.clang-tools
+  llvmPackages_20.clang-tools
+
 ]

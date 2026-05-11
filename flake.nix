@@ -30,7 +30,8 @@
     , home-manager
     , nixpkgs
     , mac-app-util
-    , nix-index-database, nixpkgs-weekly
+    , nix-index-database
+    , nixpkgs-weekly
     , ...
     }@inputs:
     let
@@ -57,15 +58,15 @@
               ];
             }
 
-            nix-homebrew.darwinModules.nix-homebrew
-            {
-              nix-homebrew = {
-                enable = true;
-                enableRosetta = true;
-                user = "ziadelshahawy";
-                autoMigrate = true;
-              };
-            }
+            # nix-homebrew.darwinModules.nix-homebrew
+            # {
+            #   nix-homebrew = {
+            #     enable = true;
+            #     enableRosetta = true;
+            #     user = "ziadelshahawy";
+            #     autoMigrate = true;
+            #   };
+            # }
 
             ./hosts/darwin/common.nix
             ./hosts/darwin/${hostConfig}.nix

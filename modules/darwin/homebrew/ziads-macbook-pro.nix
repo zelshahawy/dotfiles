@@ -8,6 +8,9 @@
     casks = [
       "spotify"
       "bruno"
+      # "porting-kit"
+      "jasp"
+      "zen"
     ];
   };
 }

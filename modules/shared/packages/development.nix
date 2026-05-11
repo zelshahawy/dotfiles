@@ -6,7 +6,6 @@ with pkgs;
   # Advanced development tools
   # android-tools
   # google-cloud-sdk
-  postman
   # code-cursor
   discord
 
