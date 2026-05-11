@@ -14,15 +14,20 @@ in
     initContent = ''
       source ${catppuccin-zsh-syntax-highlighting}/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
       eval $(opam env)
+      typeset -U path # to remove dup paths
 
-      path+=(
-        $HOME/go/bin
-        $HOME/.cargo/bin
-        /run/current-system/sw/bin
-        $HOME/.local/bin
-        $HOME/.cabal
+      path=(
+        /opt/homebrew/bin
+
         $HOME/.ghcup/bin
-        /Library/TeX/texbin # for pdflatex
+        $HOME/.cabal
+        $HOME/.local/bin
+        $HOME/.cargo/bin
+        $HOME/go/bin
+
+        /Library/TeX/texbin
+        /run/current-system/sw/bin
+        $path
       )
 
       prompt_context(){}
