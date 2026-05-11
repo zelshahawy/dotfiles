@@ -71,4 +71,6 @@ in
   # C++
   llvmPackages_20.clang-tools
 
+  #golang
+  yaegi
 ]
