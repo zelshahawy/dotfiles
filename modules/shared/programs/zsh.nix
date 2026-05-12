@@ -25,9 +25,9 @@ in
         $HOME/.cargo/bin
         $HOME/go/bin
 
-        /Library/TeX/texbin
         /run/current-system/sw/bin
         $path
+        /Library/TeX/texbin
       )
 
       prompt_context(){}
