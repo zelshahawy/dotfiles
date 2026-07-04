@@ -43,6 +43,7 @@
       # "free-download-manager"
       "basictex"
       "microsoft-teams"
+      "quarto"
     ];
   };
 }

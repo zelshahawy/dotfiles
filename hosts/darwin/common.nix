@@ -51,7 +51,6 @@
     enableAllTerminfo = true;
     systemPackages = with pkgs; [
       sketchybar
-      aerospace
     ];
     etc."pam.d/sudo_local".text = ''
       # Managed by Nix Darwin

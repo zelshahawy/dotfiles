@@ -9,6 +9,7 @@
     ./kitty.nix
     ./ghosty.nix
     ./starship.nix
+    ./helix.nix
   ];
 
   programs.atuin = {

@@ -10,20 +10,15 @@ with pkgs;
   discord
 
   # Language servers and tools
-  bash-language-server
   ccls
   languagetool
   nil
   basedpyright
-  gopls
-  lua-language-server
-  taplo # toml
   texlab # latex
   typst
   tinymist # typst
   millet # SML
   nixpkgs-fmt #for nix
-  typescript-language-server # for typescript, tx
   just-lsp
 
 
