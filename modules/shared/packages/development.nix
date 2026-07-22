@@ -18,9 +18,8 @@ with pkgs;
   typst
   tinymist # typst
   millet # SML
-  nixpkgs-fmt #for nix
+  nixpkgs-fmt # for nix
   just-lsp
-
 
   # repl
 
