@@ -13,6 +13,7 @@
       # "jasp"
       "zen"
       "positron"
+      "rustrover"
 
       {
         name = "kanriapp/cask/kanri";
