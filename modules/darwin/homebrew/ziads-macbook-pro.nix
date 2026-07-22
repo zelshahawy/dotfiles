@@ -13,6 +13,14 @@
       # "jasp"
       "zen"
       "positron"
+
+      {
+        name = "kanriapp/cask/kanri";
+        trusted = true;
+      }
+    ];
+
+    taps = [
     ];
   };
 }
