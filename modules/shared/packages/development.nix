@@ -7,7 +7,6 @@ with pkgs;
   # android-tools
   # google-cloud-sdk
   # code-cursor
-  discord
 
   # Language servers and tools
   ccls
@@ -18,9 +17,8 @@ with pkgs;
   typst
   tinymist # typst
   millet # SML
-  nixpkgs-fmt #for nix
+  nixpkgs-fmt # for nix
   just-lsp
-
 
   # repl
 

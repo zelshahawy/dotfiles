@@ -44,6 +44,7 @@
       "basictex"
       "microsoft-teams"
       "quarto"
+      "discord"
     ];
   };
 }

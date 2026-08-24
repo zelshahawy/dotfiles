@@ -94,6 +94,32 @@
     allowUnfree = true;
     problems.handlers = {
       yaegi.broken = "warn";
+      pylsp-mypy.broken = "warn";
     };
   };
+
+  nixpkgs.overlays = [
+    (
+      final: prev:
+      let
+        patchPy =
+          py:
+          py.override (old: {
+            packageOverrides = final.lib.composeExtensions (old.packageOverrides or (_: _: { })) (
+              pyfinal: pyprev: {
+                pylsp-mypy = pyprev.pylsp-mypy.overridePythonAttrs (_: {
+                  doCheck = false; # tests are stale vs. current mypy
+                });
+              }
+            );
+          });
+      in
+      {
+        python3 = patchPy prev.python3;
+        python313 = patchPy prev.python313; # the log says python3.13
+        python3Packages = final.python3.pkgs; # keep the alias in sync
+        python313Packages = final.python313.pkgs;
+      }
+    )
+  ];
 }

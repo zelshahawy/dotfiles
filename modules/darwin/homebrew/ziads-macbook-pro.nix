@@ -13,7 +13,7 @@
       # "jasp"
       "zen"
       "positron"
-      "rustrover"
+      "clion"
 
       {
         name = "kanriapp/cask/kanri";
