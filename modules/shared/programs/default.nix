@@ -39,6 +39,8 @@
   programs.tealdeer.enable = true;
   programs.alacritty.enable = true;
 
+  programs.fzf.historyWidget.command = "";
+
   # AI stuff
   programs.claude-code.enable = true;
   programs.opencode = {
