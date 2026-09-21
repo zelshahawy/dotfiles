@@ -73,5 +73,5 @@ in
   clang
 
   # Lean
-  lean4
+  elan
 ]
