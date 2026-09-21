@@ -67,7 +67,11 @@ in
 
   # Markdown
   markdown-oxide
-  # C++
-  llvmPackages_20.clang-tools
 
+  # C++
+  clang-tools
+  clang
+
+  # Lean
+  lean4
 ]

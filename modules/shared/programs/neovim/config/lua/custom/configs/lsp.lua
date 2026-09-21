@@ -4,7 +4,12 @@ local on_attach = require("custom.util.lspconfig").on_attach
 
 local servers = {
   -- C/C++ LSP
-  clangd = {},
+  clangd = {
+    cmd = {
+      "clangd",
+      "--query-driver=/Users/ziadelshahawy/.nix-profile/bin/clang*",
+    },
+  },
 
   -- Go LSP
   gopls = {},

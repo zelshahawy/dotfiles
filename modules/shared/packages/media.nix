@@ -7,7 +7,6 @@ with pkgs;
   cairo
   adwaita-icon-theme
   gtk3
-  gtksourceview
   libxml2
 
   # Build dependencies for media apps
