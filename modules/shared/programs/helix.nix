@@ -11,7 +11,10 @@
         color-modes = true;
         true-color = true;
         bufferline = "multiple";
-        rulers = [ 80 100 ];
+        rulers = [
+          80
+          100
+        ];
         scrolloff = 8;
         idle-timeout = 50;
         completion-trigger-len = 1;
@@ -30,10 +33,28 @@
         };
 
         statusline = {
-          left = [ "mode" "spinner" "version-control" "file-name" "file-modification-indicator" ];
+          left = [
+            "mode"
+            "spinner"
+            "version-control"
+            "file-name"
+            "file-modification-indicator"
+          ];
           center = [ ];
-          right = [ "diagnostics" "selections" "register" "position" "file-encoding" "file-line-ending" "file-type" ];
-          mode = { normal = "NORMAL"; insert = "INSERT"; select = "SELECT"; };
+          right = [
+            "diagnostics"
+            "selections"
+            "register"
+            "position"
+            "file-encoding"
+            "file-line-ending"
+            "file-type"
+          ];
+          mode = {
+            normal = "NORMAL";
+            insert = "INSERT";
+            select = "SELECT";
+          };
         };
 
         lsp = {
@@ -44,26 +65,54 @@
           snippets = true;
         };
 
-        indent-guides = { render = true; character = "╎"; skip-levels = 1; };
-        soft-wrap = { enable = true; wrap-indicator = "↪ "; };
-        gutters = [ "diagnostics" "spacer" "line-numbers" "spacer" "diff" ];
+        indent-guides = {
+          render = true;
+          character = "╎";
+          skip-levels = 1;
+        };
+        soft-wrap = {
+          enable = true;
+          wrap-indicator = "↪ ";
+        };
+        gutters = [
+          "diagnostics"
+          "spacer"
+          "line-numbers"
+          "spacer"
+          "diff"
+        ];
         smart-tab.enable = true;
 
         auto-save = {
           focus-lost = true;
-          after-delay = { enable = true; timeout = 3000; };
+          after-delay = {
+            enable = true;
+            timeout = 3000;
+          };
         };
       };
 
       keys.normal = {
         space.space = "file_picker";
-        space.w = [ ":format" ":write" ];
+        space.w = [
+          ":format"
+          ":write"
+        ];
         space.f = ":format";
         space.q = ":quit";
         space.x = ":buffer-close";
-        esc = [ "collapse_selection" "keep_primary_selection" ];
-        "C-d" = [ "half_page_down" "align_view_center" ];
-        "C-u" = [ "half_page_up" "align_view_center" ];
+        esc = [
+          "collapse_selection"
+          "keep_primary_selection"
+        ];
+        "C-d" = [
+          "half_page_down"
+          "align_view_center"
+        ];
+        "C-u" = [
+          "half_page_up"
+          "align_view_center"
+        ];
         "A-j" = "move_line_down";
         "A-k" = "move_line_up";
         "C-h" = "jump_view_left";
@@ -74,7 +123,7 @@
       };
     };
 
-    themes = {};
+    themes = { };
 
     languages = {
       language-server = {
@@ -93,7 +142,11 @@
           gofumpt = true;
           staticcheck = true;
           usePlaceholders = true;
-          analyses = { unusedparams = true; nilness = true; shadow = true; };
+          analyses = {
+            unusedparams = true;
+            nilness = true;
+            shadow = true;
+          };
           hints = {
             assignVariableTypes = true;
             compositeLiteralFields = true;
@@ -112,19 +165,39 @@
             autoImportCompletions = true;
           };
         };
-        ruff = { command = "ruff"; args = [ "server" ]; };
+        ruff = {
+          command = "ruff";
+          args = [ "server" ];
+        };
 
         nixd.config.nixd.formatting.command = [ "nixfmt" ];
       };
 
       language = [
-        { name = "rust"; auto-format = true; language-servers = [ "rust-analyzer" ]; }
-        { name = "go"; auto-format = true; language-servers = [ "gopls" ]; }
+        {
+          name = "rust";
+          auto-format = true;
+          language-servers = [ "rust-analyzer" ];
+        }
+        {
+          name = "go";
+          auto-format = true;
+          language-servers = [ "gopls" ];
+        }
         {
           name = "python";
           auto-format = true;
-          language-servers = [ "pyright" "ruff" ];
-          formatter = { command = "ruff"; args = [ "format" "-" ]; };
+          language-servers = [
+            "pyright"
+            "ruff"
+          ];
+          formatter = {
+            command = "ruff";
+            args = [
+              "format"
+              "-"
+            ];
+          };
         }
         {
           name = "nix";
@@ -132,14 +205,92 @@
           language-servers = [ "nixd" ];
           formatter.command = "nixfmt";
         }
-        { name = "bash"; auto-format = true; formatter = { command = "shfmt"; args = [ "-i" "2" ]; }; }
-        { name = "lua"; auto-format = true; formatter = { command = "stylua"; args = [ "-" ]; }; }
-        { name = "toml"; auto-format = true; formatter = { command = "taplo"; args = [ "format" "-" ]; }; }
-        { name = "json"; auto-format = true; formatter = { command = "prettier"; args = [ "--parser" "json" ]; }; }
-        { name = "yaml"; auto-format = true; formatter = { command = "prettier"; args = [ "--parser" "yaml" ]; }; }
-        { name = "markdown"; auto-format = true; language-servers = [ "marksman" ]; formatter = { command = "prettier"; args = [ "--parser" "markdown" ]; }; }
-        { name = "typescript"; auto-format = true; formatter = { command = "prettier"; args = [ "--parser" "typescript" ]; }; }
-        { name = "javascript"; auto-format = true; formatter = { command = "prettier"; args = [ "--parser" "babel" ]; }; }
+        {
+          name = "bash";
+          auto-format = true;
+          formatter = {
+            command = "shfmt";
+            args = [
+              "-i"
+              "2"
+            ];
+          };
+        }
+        {
+          name = "lua";
+          auto-format = true;
+          formatter = {
+            command = "stylua";
+            args = [ "-" ];
+          };
+        }
+        {
+          name = "toml";
+          auto-format = true;
+          formatter = {
+            command = "taplo";
+            args = [
+              "format"
+              "-"
+            ];
+          };
+        }
+        {
+          name = "json";
+          auto-format = true;
+          formatter = {
+            command = "prettier";
+            args = [
+              "--parser"
+              "json"
+            ];
+          };
+        }
+        {
+          name = "yaml";
+          auto-format = true;
+          formatter = {
+            command = "prettier";
+            args = [
+              "--parser"
+              "yaml"
+            ];
+          };
+        }
+        {
+          name = "markdown";
+          auto-format = true;
+          language-servers = [ "marksman" ];
+          formatter = {
+            command = "prettier";
+            args = [
+              "--parser"
+              "markdown"
+            ];
+          };
+        }
+        {
+          name = "typescript";
+          auto-format = true;
+          formatter = {
+            command = "prettier";
+            args = [
+              "--parser"
+              "typescript"
+            ];
+          };
+        }
+        {
+          name = "javascript";
+          auto-format = true;
+          formatter = {
+            command = "prettier";
+            args = [
+              "--parser"
+              "babel"
+            ];
+          };
+        }
       ];
     };
 
@@ -167,4 +318,3 @@
     ];
   };
 }
-
