@@ -5,6 +5,6 @@ if [[ $# -ne 1 ]]; then
   exit 1
 else
   git add modules
-  git commit -m "Updated $1"
+  git commit -m "$1"
   git push origin
 fi
