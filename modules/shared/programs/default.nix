@@ -55,4 +55,6 @@
     };
 
   };
+
+  programs.codex.enable = true;
 }
