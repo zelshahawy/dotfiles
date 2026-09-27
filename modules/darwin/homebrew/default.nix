@@ -44,6 +44,7 @@
       "basictex"
       "quarto"
       "discord"
+      "bitwarden"
     ];
   };
 }
