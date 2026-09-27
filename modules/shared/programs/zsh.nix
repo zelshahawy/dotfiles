@@ -67,8 +67,15 @@ in
 
       # Homelab
       destiny = "ssh ziadelshahawy@destiny";
-      wing-zero = "ssh ziadelshahawy@wing-zero";
+      #wing-zero = "ssh ziadelshahawy@wing-zero";
       unicorn = "ssh ziadelshahawy@unicorn";
+
+
+      # Cloud Servers
+      deathscythe = "ssh opc@64.181.223.158";
+      wingzero = "ssh opc@163.192.204.95";
+      victoryv2 = "ssh opc@149.130.215.155";
+
     }
     // (
       let
@@ -85,10 +92,12 @@ in
         ];
       in
       builtins.listToAttrs (
-        map (server: {
-          name = server;
-          value = "ssh zelshahawy@${server}.cs.uchicago.edu";
-        }) servers
+        map
+          (server: {
+            name = server;
+            value = "ssh zelshahawy@${server}.cs.uchicago.edu";
+          })
+          servers
       )
     );
     plugins = [
