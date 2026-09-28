@@ -32,7 +32,21 @@ vim.opt.rtp:prepend(lazypath)
 --
 --  You can also configure plugins after the setup call,
 --    as they will be available in your neovim runtime.
+-- Home Manager's shared lockfile is read-only. Lazy also writes during restore,
+-- so use a writable copy, refreshed from the shared pins at each startup.
+-- Set NVIM_LAZY_LOCKFILE to the repository lockfile when intentionally updating.
+local lockfile = vim.env.NVIM_LAZY_LOCKFILE
+if not lockfile or lockfile == "" then
+	local shared_lockfile = vim.fn.stdpath("config") .. "/lazy-lock.json"
+	lockfile = vim.fn.stdpath("state") .. "/lazy-lock.json"
+	vim.fn.mkdir(vim.fn.stdpath("state"), "p")
+	if vim.fn.filereadable(shared_lockfile) == 1 then
+		vim.fn.writefile(vim.fn.readfile(shared_lockfile), lockfile)
+	end
+end
+
 require("lazy").setup("custom.plugins", {
+	lockfile = lockfile,
 	defaults = {
 		cond = true,
 	},

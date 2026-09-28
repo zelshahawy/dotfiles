@@ -50,8 +50,19 @@ return {
 	{
 		-- Highlight, edit, and navigate code
 		"nvim-treesitter/nvim-treesitter",
+		branch = "main",
+		lazy = false,
 		dependencies = {
-			"nvim-treesitter/nvim-treesitter-textobjects",
+			{
+				"nvim-treesitter/nvim-treesitter-textobjects",
+				branch = "main",
+				init = function()
+					-- Built-in filetype mappings otherwise override our textobject motions.
+					vim.g.no_python_maps = true
+					vim.g.no_go_maps = true
+					vim.g.no_rust_maps = true
+				end,
+			},
 		},
 		build = ":TSUpdate",
 	},

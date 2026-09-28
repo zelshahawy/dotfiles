@@ -1,6 +1,5 @@
-{
-  hostname ? "ziads-macbook-air",
-  ...
+{ hostname ? "ziads-macbook-air"
+, ...
 }:
 {
   imports = [
