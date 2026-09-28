@@ -2,15 +2,38 @@ vim.filetype.add({ extension = { mdx = "mdx" } })
 vim.treesitter.language.register("markdown", "mdx")
 
 require("nvim-treesitter").install({
-	"c", "cpp", "go", "lua", "python", "tsx", "javascript", "typescript",
-	"vimdoc", "vim", "rust", "markdown", "markdown_inline",
+	"c",
+	"cpp",
+	"go",
+	"lua",
+	"python",
+	"tsx",
+	"javascript",
+	"typescript",
+	"vimdoc",
+	"vim",
+	"rust",
+	"markdown",
+	"markdown_inline",
 })
 
 vim.api.nvim_create_autocmd("FileType", {
 	group = vim.api.nvim_create_augroup("CustomTreesitter", { clear = true }),
 	pattern = {
-		"c", "cpp", "go", "lua", "python", "typescriptreact", "javascript",
-		"javascriptreact", "typescript", "help", "vim", "rust", "markdown", "mdx",
+		"c",
+		"cpp",
+		"go",
+		"lua",
+		"python",
+		"typescriptreact",
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"help",
+		"vim",
+		"rust",
+		"markdown",
+		"mdx",
 	},
 	callback = function()
 		-- Parsers install asynchronously; reopen the buffer after first installation.
