@@ -170,7 +170,7 @@
           args = [ "server" ];
         };
 
-        nixd.config.nixd.formatting.command = [ "nixfmt" ];
+        nixd.config.nixd.formatting.command = [ "nixfmt-rfc-style" ];
       };
 
       language = [
@@ -203,7 +203,7 @@
           name = "nix";
           auto-format = true;
           language-servers = [ "nixd" ];
-          formatter.command = "nixfmt";
+          formatter.command = "nixfmt-rfc-style";
         }
         {
           name = "bash";
@@ -314,7 +314,7 @@
       marksman
       taplo
       yaml-language-server
-      dockerfile-language-server-nodejs
+      dockerfile-language-server
     ];
   };
 }
