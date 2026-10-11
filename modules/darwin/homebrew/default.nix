@@ -32,6 +32,7 @@
       # "licecap"
       # "shottr"
       "slack"
+      # "zoom"
       "obsidian"
       "tailscale-app"
       "arc"
@@ -39,11 +40,11 @@
       "rstudio"
       "font-sketchybar-app-font"
       "orbstack"
+      # "free-download-manager"
       "basictex"
       "quarto"
       "discord"
       "bitwarden"
-      "zen"
     ];
   };
 }
