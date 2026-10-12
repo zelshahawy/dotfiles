@@ -45,7 +45,6 @@
       "quarto"
       "discord"
       "bitwarden"
-      "google-chrome"
     ];
   };
 }
