@@ -9,6 +9,11 @@ return {
 	opts = {
 		flavour = "Mocha",
 		transparent_background = false,
+		custom_highlights = function(colors)
+			return {
+				LspInlayHint = { fg = colors.overlay0, bg = "NONE" },
+			}
+		end,
 		styles = {
 			comments = {},
 		},

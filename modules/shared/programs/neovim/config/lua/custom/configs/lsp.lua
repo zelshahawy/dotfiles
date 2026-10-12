@@ -7,7 +7,10 @@ local servers = {
 	clangd = {
 		cmd = {
 			"clangd",
-			"--query-driver=/Users/ziadelshahawy/.nix-profile/bin/clang*",
+			-- Query the Nix compiler for its standard-library headers.
+			"--query-driver=" .. vim.fn.expand("~/.nix-profile/bin/") .. "c++,"
+				.. vim.fn.expand("~/.nix-profile/bin/") .. "g++,"
+				.. vim.fn.expand("~/.nix-profile/bin/") .. "clang*",
 		},
 	},
 

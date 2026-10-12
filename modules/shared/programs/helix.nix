@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   programs.helix = {
     enable = true;
@@ -127,6 +127,11 @@
 
     languages = {
       language-server = {
+        clangd = {
+          command = "clangd";
+          args = [ "--query-driver=${config.home.profileDirectory}/bin/c++" ];
+        };
+
         rust-analyzer.config = {
           check.command = "clippy";
           cargo.features = "all";

@@ -70,7 +70,7 @@ in
 
   # C++
   clang-tools
-  clang
+  gcc15
 
   # Lean
   elan

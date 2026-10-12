@@ -14,6 +14,7 @@
       user.name = "Ziad Elshahawy";
       user.email = "ziadelshahawygit@gmail.com";
       init.defaultBranch = "main";
+      credential.helper = "osxkeychain";
       core = {
         editor = "nvim";
         autocrlf = "input";

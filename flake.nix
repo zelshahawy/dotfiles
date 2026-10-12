@@ -5,7 +5,10 @@
     nixpkgs-weekly.url = "https://flakehub.com/f/DeterminateSystems/nixpkgs-weekly/0.1.978638";
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
-    mac-app-util.url = "github:hraban/mac-app-util";
+    mac-app-util = {
+      url = "github:hraban/mac-app-util";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       inputs.nixpkgs.follows = "nixpkgs";

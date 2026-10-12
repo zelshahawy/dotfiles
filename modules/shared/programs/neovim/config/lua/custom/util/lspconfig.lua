@@ -3,7 +3,11 @@ local M = {}
 --  This function gets run when an LSP connects to a particular buffer. Needs
 --  to be passed to some plugins.
 --  Other lsp config is later in the file.
-M.on_attach = function(_, bufnr)
+M.on_attach = function(client, bufnr)
+	if client:supports_method("textDocument/inlayHint", bufnr) then
+		vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+	end
+
 	local nmap = function(keys, func, desc)
 		if desc then
 			desc = "LSP: " .. desc
