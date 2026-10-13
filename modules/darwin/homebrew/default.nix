@@ -45,6 +45,7 @@
       "quarto"
       "discord"
       "bitwarden"
+      "chatgpt" # fallen to the dark side, type shit.
     ];
   };
 }
