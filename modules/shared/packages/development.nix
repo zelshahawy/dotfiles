@@ -32,4 +32,7 @@ with pkgs;
 
   # qemu
   z3
+
+  # cloud
+  google-cloud-sdk
 ]
