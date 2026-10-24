@@ -9,5 +9,4 @@ sbar.bar({
 	topmost = "window",
 	sticky = "on",
 	display = "all",
-
 })
