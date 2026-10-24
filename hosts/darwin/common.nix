@@ -99,6 +99,18 @@
   };
 
   nixpkgs.overlays = [
+    # Bump only sketchybar without updating the whole nixpkgs input
+    (final: prev: {
+      sketchybar = prev.sketchybar.overrideAttrs (old: rec {
+        version = "2.24.1";
+        src = prev.fetchFromGitHub {
+          owner = "FelixKratz";
+          repo = "SketchyBar";
+          rev = "v${version}";
+          hash = "sha256-fEbVzafjFTigR7TjQ41gOnDpk6S4B8qCwpz890ZNgwE=";
+        };
+      });
+    })
     (
       final: prev:
       let

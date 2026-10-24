@@ -66,6 +66,7 @@ return {
 	["Default"] = ":default:",
 	["CleanMyMac X"] = ":desktop:",
 	["DEVONthink 3"] = ":devonthink3:",
+	["Dia"] = ":dia:",
 	["DingTalk"] = ":dingtalk:",
 	["钉钉"] = ":dingtalk:",
 	["阿里钉"] = ":dingtalk:",
