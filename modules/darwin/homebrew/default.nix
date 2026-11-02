@@ -35,8 +35,6 @@
       # "zoom"
       "obsidian"
       "tailscale-app"
-      "arc"
-      "kiro"
       "rstudio"
       "font-sketchybar-app-font"
       "orbstack"
