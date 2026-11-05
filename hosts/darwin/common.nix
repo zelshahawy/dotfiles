@@ -1,9 +1,8 @@
-{
-  config,
-  pkgs,
-  hostName,
-  lib,
-  ...
+{ config
+, pkgs
+, hostName
+, lib
+, ...
 }:
 {
   imports = [
@@ -67,6 +66,19 @@
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
+  services.openssh = {
+    enable = true;
+
+    extraConfig = ''
+      PubkeyAuthentication yes
+      PasswordAuthentication no
+      KbdInteractiveAuthentication no
+      PermitRootLogin no
+
+      AllowUsers ziadelshahawy@100.64.0.0/10 ziadelshahawy@fd7a:115c:a1e0::/48
+    '';
+  };
+
   nix = {
     enable = true;
     settings = {
@@ -99,6 +111,37 @@
   };
 
   nixpkgs.overlays = [
+    # Work around the OpenCode 2.2.5 dependency hash mismatch on Apple Silicon.
+    (final: prev: {
+      opencode =
+        if
+          prev.stdenv.hostPlatform.system == "aarch64-darwin"
+          && prev.opencode.version == "2.2.5"
+          && prev.opencode.node_modules.outputHash == "sha256-xfOVcw1+waLVNhFDwzOtzxrUSQEogvn88YomydOlhwc="
+        then
+          prev.opencode.overrideAttrs
+            (old: {
+              node_modules = old.node_modules.overrideAttrs (_: {
+                outputHash = "sha256-dIveiaiPFGSItwLyeMuPDxTE9gpvvnlTCB/+nG24qCc=";
+              });
+            })
+        else
+          prev.opencode;
+    })
+    # xcp 0.24.9 renamed these tests, so nixpkgs' Darwin skip flags no longer match.
+    (final: prev: {
+      xcp =
+        if prev.stdenv.hostPlatform.isDarwin && prev.xcp.version == "0.24.9" then
+          prev.xcp.overrideAttrs
+            (old: {
+              checkFlags = (old.checkFlags or [ ]) ++ [
+                "--skip=test_socket_file::test_case_1_test_with_parallel_file_driver"
+                "--skip=test_sockets_dir::test_case_1_test_with_parallel_file_driver"
+              ];
+            })
+        else
+          prev.xcp;
+    })
     # Bump only sketchybar without updating the whole nixpkgs input
     (final: prev: {
       sketchybar = prev.sketchybar.overrideAttrs (old: rec {
@@ -113,25 +156,25 @@
     })
     (
       final: prev:
-      let
-        patchPy =
-          py:
-          py.override (old: {
-            packageOverrides = final.lib.composeExtensions (old.packageOverrides or (_: _: { })) (
-              pyfinal: pyprev: {
-                pylsp-mypy = pyprev.pylsp-mypy.overridePythonAttrs (_: {
-                  doCheck = false; # tests are stale vs. current mypy
-                });
-              }
-            );
-          });
-      in
-      {
-        python3 = patchPy prev.python3;
-        python313 = patchPy prev.python313; # the log says python3.13
-        python3Packages = final.python3.pkgs; # keep the alias in sync
-        python313Packages = final.python313.pkgs;
-      }
+        let
+          patchPy =
+            py:
+            py.override (old: {
+              packageOverrides = final.lib.composeExtensions (old.packageOverrides or (_: _: { })) (
+                pyfinal: pyprev: {
+                  pylsp-mypy = pyprev.pylsp-mypy.overridePythonAttrs (_: {
+                    doCheck = false; # tests are stale vs. current mypy
+                  });
+                }
+              );
+            });
+        in
+        {
+          python3 = patchPy prev.python3;
+          python313 = patchPy prev.python313; # the log says python3.13
+          python3Packages = final.python3.pkgs; # keep the alias in sync
+          python313Packages = final.python313.pkgs;
+        }
     )
   ];
 }
