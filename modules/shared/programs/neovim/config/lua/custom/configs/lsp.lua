@@ -2,93 +2,94 @@
 
 local on_attach = require("custom.util.lspconfig").on_attach
 
-local servers = {
-	-- C/C++ LSP
-	clangd = {
-		cmd = {
-			"clangd",
-			-- Query the Nix compiler for its standard-library headers.
-			"--query-driver=" .. vim.fn.expand("~/.nix-profile/bin/") .. "c++,"
-				.. vim.fn.expand("~/.nix-profile/bin/") .. "g++,"
-				.. vim.fn.expand("~/.nix-profile/bin/") .. "clang*",
+local servers =
+	{
+		-- C/C++ LSP
+		clangd = {
+			cmd = {
+				"clangd",
+				-- Query the Nix compiler for its standard-library headers.
+				"--query-driver=" .. vim.fn.expand("~/.nix-profile/bin/") .. "c++," .. vim.fn.expand(
+					"~/.nix-profile/bin/"
+				) .. "g++," .. vim.fn.expand("~/.nix-profile/bin/") .. "clang*",
+			},
 		},
-	},
 
-	-- Go LSP
-	gopls = {},
+		-- Go LSP
+		gopls = {},
 
-	-- TypeScript/JavaScript LSP
+		-- TypeScript/JavaScript LSP
 
-	-- Ansible LSP
+		-- Ansible LSP
 
-	-- Python LSP with additional plugins
-	basedpyright = {
-		settings = {
-			basedpyright = {
-				analysis = {
-					inlayHints = {
-						callArgumentNames = false,
+		-- Python LSP with additional plugins
+		basedpyright = {
+			settings = {
+				basedpyright = {
+					analysis = {
+						inlayHints = {
+							callArgumentNames = false,
+						},
 					},
 				},
 			},
 		},
-	},
 
-	ruff = {}, -- For formatting
+		ruff = {}, -- For formatting
 
-	-- Lua LSP
-	lua_ls = {
-		settings = {
-			Lua = {
-				runtime = {
-					version = "LuaJIT",
-				},
-				diagnostics = {
-					globals = { "vim" },
-				},
-				workspace = {
-					checkThirdParty = false,
-					library = {
-						vim.env.VIMRUNTIME,
+		-- Lua LSP
+		lua_ls = {
+			settings = {
+				Lua = {
+					runtime = {
+						version = "LuaJIT",
 					},
-				},
-				completion = {
-					callSnippet = "Replace",
-				},
-				telemetry = {
-					enable = false,
-				},
-			},
-		},
-	},
-
-	-- Haskell
-	hls = {},
-	-- Nix LSP
-	nil_ls = {
-		settings = {
-			["nil"] = {
-				formatting = {
-					command = { "nixpkgs-fmt" },
-				},
-				nix = {
-					flake = {
-						autoArchive = true,
+					diagnostics = {
+						globals = { "vim" },
+					},
+					workspace = {
+						checkThirdParty = false,
+						library = {
+							vim.env.VIMRUNTIME,
+						},
+					},
+					completion = {
+						callSnippet = "Replace",
+					},
+					telemetry = {
+						enable = false,
 					},
 				},
 			},
 		},
-	},
 
-	ts_ls = {}, -- for typescript
+		-- Haskell
+		hls = {},
+		-- Nix LSP
+		nil_ls = {
+			settings = {
+				["nil"] = {
+					formatting = {
+						command = { "nixpkgs-fmt" },
+					},
+					nix = {
+						flake = {
+							autoArchive = true,
+						},
+					},
+				},
+			},
+		},
 
-	-- Rust LSP already configured
+		ts_ls = {}, -- for typescript
 
-	-- Markdown
-	markdown_oxide = {},
+		-- Rust LSP already configured
 
-	lean = {},
-}
+		-- Markdown
+		markdown_oxide = {},
+
+		lean = {},
+	}
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
