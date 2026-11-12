@@ -229,6 +229,7 @@ return {
 	["Podcasts"] = ":podcasts:",
 	["播客"] = ":podcasts:",
 	["PomoDone App"] = ":pomodone:",
+	["Positron"] = ":rstudio:",
 	["Postman"] = ":postman:",
 	["Proton Mail"] = ":proton_mail:",
 	["Proton Mail Bridge"] = ":proton_mail:",

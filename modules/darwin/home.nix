@@ -1,6 +1,5 @@
-{
-  hostname ? "ziads-macbook-air",
-  ...
+{ hostname ? "ziads-macbook-air"
+, ...
 }:
 let
   fullName = "Ziad Elshahawy";
@@ -18,7 +17,8 @@ in
       isHidden = false;
       shell = "/run/current-system/sw/bin/zsh";
       openssh.authorizedKeys.keys = [
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJnED6Zn+RYtN3VwlTszF6CYW9dmINCy0QjgARJX5/13 ziadelshahawy@Ziads-Mac-mini.local"
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJnED6Zn+RYtN3VwlTszF6CYW9dmINCy0QjgARJX5/13 ziadelshahawy@Ziads-Mac-mini.local" # Mac Mini
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHspwOanq8flHAsMaxD5EgMs2g8L4OWEBf0akHNLPKWq ziadelshahawygit@gmail.com" # MacPro
       ];
     };
   };
@@ -35,11 +35,10 @@ in
         ;
     };
     users.${user} =
-      {
-        pkgs,
-        config,
-        lib,
-        ...
+      { pkgs
+      , config
+      , lib
+      , ...
       }:
       {
         imports = [
