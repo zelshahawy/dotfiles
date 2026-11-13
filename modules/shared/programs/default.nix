@@ -36,7 +36,10 @@
   programs.vim.enable = true;
   programs.zoxide.enable = true;
   programs.uv.enable = true;
-  programs.tealdeer.enable = true;
+  programs.tealdeer = {
+    enable = true;
+    enableAutoUpdates = false;
+  };
   programs.alacritty.enable = true;
 
   programs.fzf.historyWidget.command = "";
@@ -46,7 +49,6 @@
   programs.opencode = {
     enable = true;
     settings = {
-      model = "ollama/qwen2.5:32b";
       autoupdate = false;
     };
 

@@ -26,7 +26,6 @@ with pkgs;
   # elan
   # fstar
   lua5_4
-  ollama
   opam
   just
 

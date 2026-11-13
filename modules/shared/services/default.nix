@@ -1,4 +1,4 @@
 { ... }:
 {
-  services.ollama.enable = true;
+  services.ollama.enable = false;
 }

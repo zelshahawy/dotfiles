@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 let
   sketchybarConfig = pkgs.stdenv.mkDerivation {
     name = "sketchybar-config-v0.1.0";
@@ -12,6 +12,8 @@ let
   };
 in
 {
+  launchd.agents.sketchybar.config.KeepAlive = lib.mkForce false;
+
   programs.sketchybar = {
     enable = true;
     config = {

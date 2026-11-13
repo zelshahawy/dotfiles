@@ -4,10 +4,6 @@
   services.aerospace = {
     enable = true;
     settings = {
-      after-startup-command = [
-        "exec-and-forget sketchybar"
-      ];
-
       enable-normalization-flatten-containers = true;
       enable-normalization-opposite-orientation-for-nested-containers = true;
 

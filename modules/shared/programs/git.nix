@@ -5,7 +5,7 @@
   programs.git = {
     enable = true;
     signing.format = "openpgp";
-    maintenance.enable = true;
+    maintenance.enable = false;
     ignores = [
       "*.swp"
       ".DS_STORE"
