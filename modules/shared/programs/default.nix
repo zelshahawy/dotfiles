@@ -59,4 +59,8 @@
   };
 
   programs.codex.enable = true;
+  programs.difftastic = {
+    enable = true;
+    git.enable = true;
+  };
 }

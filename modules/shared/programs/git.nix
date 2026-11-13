@@ -1,7 +1,7 @@
 { ... }:
 {
   programs.delta.enable = true;
-  programs.delta.enableGitIntegration = true;
+  programs.delta.enableGitIntegration = false;
   programs.git = {
     enable = true;
     signing.format = "openpgp";
@@ -10,6 +10,7 @@
       "*.swp"
       ".DS_STORE"
     ];
+
     settings = {
       user.name = "Ziad Elshahawy";
       user.email = "ziadelshahawygit@gmail.com";
@@ -21,6 +22,12 @@
       };
       pull.rebase = true;
       rebase.autoStash = true;
+
+      pager = {
+        log = "delta";
+        show = "delta";
+        blame = "delta";
+      };
 
     };
     lfs = {
