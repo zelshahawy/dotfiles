@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, lib, ... }:
 
 {
   services.aerospace = {
@@ -206,7 +206,7 @@
       exec-on-workspace-change = [
         "/bin/bash"
         "-c"
-        "/run/current-system/sw/bin/sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE && /run/current-system/sw/bin/sketchybar --trigger windows_on_spaces"
+        "${lib.getExe pkgs.sketchybar} --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE"
       ];
 
       # Workspace to monitor assignment

@@ -49,9 +49,6 @@
 
   environment = {
     enableAllTerminfo = true;
-    systemPackages = with pkgs; [
-      sketchybar
-    ];
     etc."pam.d/sudo_local".text = ''
       # Managed by Nix Darwin
       auth       optional       ${pkgs.pam-reattach}/lib/pam/pam_reattach.so ignore_ssh

@@ -88,7 +88,9 @@ for i = 1, 10, 1 do
 			if env.BUTTON == "right" then
 			-- Aerospace doesn't have a destroy workspace command, skip this
 			else
-				sbar.exec("aerospace workspace " .. i)
+				sbar.exec("aerospace workspace " .. i, function()
+					sbar.trigger("windows_on_spaces")
+				end)
 			end
 		end
 	end)
@@ -106,6 +108,7 @@ local space_window_observer = sbar.add("item", {
 -- Periodic update every 2 seconds to catch window changes
 sbar.add("item", {
 	drawing = false,
+	updates = true,
 	update_freq = 2,
 	script = "sketchybar --trigger windows_on_spaces",
 })
@@ -133,7 +136,6 @@ local spaces_indicator = sbar.add("item", {
 })
 
 space_window_observer:subscribe("aerospace_workspace_change", function(env)
-	local focused_workspace = env.FOCUSED_WORKSPACE
 	for i = 1, 10 do
 		sbar.exec("aerospace list-windows --workspace " .. i .. " --format '%{app-name}'", function(apps_output)
 			local icon_line = ""
@@ -161,11 +163,17 @@ space_window_observer:subscribe("aerospace_workspace_change", function(env)
 	end
 end)
 
-space_window_observer:subscribe("windows_on_spaces", function(env)
-	sbar.exec("aerospace list-workspaces --focused", function(focused_ws)
-		sbar.trigger("aerospace_workspace_change", { FOCUSED_WORKSPACE = focused_ws:gsub("%s+", "") })
+local function refresh_focused_workspace()
+	sbar.exec("aerospace list-workspaces --focused", function(focused_ws, exit_code)
+		local workspace = focused_ws:match("^%s*(%d+)%s*$")
+		if exit_code == 0 and workspace then
+			sbar.trigger("aerospace_workspace_change", { FOCUSED_WORKSPACE = workspace })
+		end
 	end)
-end)
+end
+
+space_window_observer:subscribe("windows_on_spaces", refresh_focused_workspace)
+refresh_focused_workspace()
 
 spaces_indicator:subscribe("swap_menus_and_spaces", function(env)
 	local currently_on = spaces_indicator:query().icon.value == icons.switch.on
