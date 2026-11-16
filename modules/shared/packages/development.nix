@@ -34,4 +34,7 @@ with pkgs;
 
   # cloud
   google-cloud-sdk
+
+  # Documentation
+  zeal
 ]
