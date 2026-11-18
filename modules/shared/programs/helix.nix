@@ -306,7 +306,7 @@
       pyright
       ruff
       nixd
-      nixfmt-rfc-style
+      nixfmt
       typescript-language-server
       vscode-langservers-extracted
       prettier
@@ -319,7 +319,7 @@
       marksman
       taplo
       yaml-language-server
-      dockerfile-language-server-nodejs
+      dockerfile-language-server
     ];
   };
 }

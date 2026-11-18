@@ -26,6 +26,18 @@ let
   ]);
 
   myHls = haskell-language-server.override { supportedGhcVersions = [ "96" ]; };
+
+  # Rustup's macOS standard library needs libiconv outside a Nix shell, too.
+  myGcc =
+    if stdenv.hostPlatform.isDarwin then
+      gcc16.override
+        {
+          nixSupport = gcc16.nixSupport // {
+            cc-ldflags = [ "-L${lib.getLib libiconv}/lib" ];
+          };
+        }
+    else
+      gcc16;
 in
 [
   # Core terminal and development tools
@@ -70,7 +82,7 @@ in
 
   # C++
   clang-tools
-  gcc15
+  myGcc
 
   # Lean
   elan
